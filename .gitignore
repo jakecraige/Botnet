@@ -34,3 +34,4 @@ Carthage
 
 # Private stuff
 GoogleService-Info.plist
+Environment.swift
