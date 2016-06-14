@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Application View Controller-->
         <scene sceneID="OcL-DI-bL8">
             <objects>
-                <viewController id="6CL-vz-niN" sceneMemberID="viewController">
+                <viewController id="6CL-vz-niN" customClass="ApplicationViewController" customModule="Botnet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BYl-48-Pud"/>
                         <viewControllerLayoutGuide type="bottom" id="juM-hz-byD"/>
@@ -15,7 +15,30 @@
                     <view key="view" contentMode="scaleToFill" id="zOL-th-bSS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="azR-Qf-PNc">
+                                <rect key="frame" x="254" y="186" width="92" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Botnet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXD-9r-vEg">
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" red="0.16078431904315948" green="0.16470588743686676" blue="0.19215686619281769" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="by thoughtbot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTg-c2-ItC">
+                                        <rect key="frame" x="0.0" y="33" width="92" height="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="textColor" red="0.7137255072593689" green="0.098039217293262482" blue="0.14117647707462311" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="azR-Qf-PNc" firstAttribute="centerX" secondItem="zOL-th-bSS" secondAttribute="centerX" id="3Kq-Qr-MRH"/>
+                            <constraint firstItem="azR-Qf-PNc" firstAttribute="centerY" secondItem="zOL-th-bSS" secondAttribute="centerY" id="qna-tr-FgC"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBm-rg-3vY" userLabel="First Responder" sceneMemberID="firstResponder"/>
