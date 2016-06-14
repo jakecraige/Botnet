@@ -7,51 +7,52 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForAnalyzing = "YES"
             buildForTesting = "YES"
             buildForRunning = "YES"
             buildForProfiling = "YES"
-            buildForArchiving = "YES">
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D434D6D4E57FA9A53A046231'
-               BlueprintName = 'Botnet'
-               ReferencedContainer = 'container:Botnet.xcodeproj'
-               BuildableName = 'Botnet.app'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D434D6D4E57FA9A53A046231"
+               BuildableName = "Botnet.app"
+               BlueprintName = "Botnet"
+               ReferencedContainer = "container:Botnet.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
-      <AdditionalOptions>
-      </AdditionalOptions>
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6B51FBCB719E71DADB5B0EF7'
-               BlueprintName = 'UnitTests'
-               ReferencedContainer = 'container:Botnet.xcodeproj'
-               BuildableName = 'UnitTests.bundle'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6B51FBCB719E71DADB5B0EF7"
+               BuildableName = "UnitTests.xctest"
+               BlueprintName = "UnitTests"
+               ReferencedContainer = "container:Botnet.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
-            BuildableIdentifier = 'primary'
-            BlueprintIdentifier = 'D434D6D4E57FA9A53A046231'
-            BlueprintName = 'Botnet'
-            ReferencedContainer = 'container:Botnet.xcodeproj'
-            BuildableName = 'Botnet.app'>
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D434D6D4E57FA9A53A046231"
+            BuildableName = "Botnet.app"
+            BlueprintName = "Botnet"
+            ReferencedContainer = "container:Botnet.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -59,34 +60,34 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      buildConfiguration = "Debug"
       allowLocationSimulation = "YES">
-      <AdditionalOptions>
-      </AdditionalOptions>
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
-            BuildableIdentifier = 'primary'
-            BlueprintIdentifier = 'D434D6D4E57FA9A53A046231'
-            BlueprintName = 'Botnet'
-            ReferencedContainer = 'container:Botnet.xcodeproj'
-            BuildableName = 'Botnet.app'>
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D434D6D4E57FA9A53A046231"
+            BuildableName = "Botnet.app"
+            BlueprintName = "Botnet"
+            ReferencedContainer = "container:Botnet.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES"
-      buildConfiguration = "Release"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <BuildableProductRunnable>
+      debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
-            BuildableIdentifier = 'primary'
-            BlueprintIdentifier = 'D434D6D4E57FA9A53A046231'
-            BlueprintName = 'Botnet'
-            ReferencedContainer = 'container:Botnet.xcodeproj'
-            BuildableName = 'Botnet.app'>
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D434D6D4E57FA9A53A046231"
+            BuildableName = "Botnet.app"
+            BlueprintName = "Botnet"
+            ReferencedContainer = "container:Botnet.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

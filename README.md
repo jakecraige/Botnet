@@ -8,6 +8,7 @@ This will:
 
  - Install the gem dependencies
  - Install the pod dependencies
+ - Install the carthage dependencies
 
 ## Testing ##
 
