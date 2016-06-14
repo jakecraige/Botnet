@@ -15,6 +15,7 @@
 		CCBBA9C71EB449976C5C1B6F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E546C9521C9B5714DBD945 /* Images.xcassets */; };
 		D57833939A123207147FC2F9 /* Pods_Botnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08D4CDC009C29C2C5173265 /* Pods_Botnet.framework */; };
 		DE53CD4715BFF97DB980830A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 906CDFA9196E62B5FFEBC50A /* Settings.bundle */; };
+		E77F283D1D10AEE40069E1F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E77F283C1D10AEE40069E1F2 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		B08D4CDC009C29C2C5173265 /* Pods_Botnet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botnet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1D261F497E5B555848E106 /* Pods-unit_tests-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests-UnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests-UnitTests/Pods-unit_tests-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		C3B04BD8229EA4EACBE9F186 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E77F283C1D10AEE40069E1F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EAEF264383161D1B0E5DBE9E /* UnitTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		F4C5B4B7761ECA7AD6A3D6C2 /* Pods-Botnet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botnet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Botnet/Pods-Botnet.debug.xcconfig"; sourceTree = "<group>"; };
 		F8AFF647E21F7A652D7F2A75 /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				5AF48D9A3FB750D9F1BFBCFE /* Info.plist */,
+				E77F283C1D10AEE40069E1F2 /* GoogleService-Info.plist */,
 			);
 			path = "Other-Sources";
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			files = (
 				CCBBA9C71EB449976C5C1B6F /* Images.xcassets in Resources */,
 				75708F5B08A9E99FF55DC00A /* Main.storyboard in Resources */,
+				E77F283D1D10AEE40069E1F2 /* GoogleService-Info.plist in Resources */,
 				3BD5D09F0118F5817BC8D19F /* LaunchScreen.xib in Resources */,
 				DE53CD4715BFF97DB980830A /* Settings.bundle in Resources */,
 			);

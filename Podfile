@@ -8,7 +8,10 @@ use_frameworks!
 target_name = "Botnet"
 
 target "Botnet" do
-  # Application Pods
+  pod "Firebase"
+  pod "Firebase/Auth"
+  pod "Firebase/Crash"
+  pod "Firebase/Database"
 end
 
 abstract_target :unit_tests do
