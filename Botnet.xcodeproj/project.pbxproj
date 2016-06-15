@@ -27,6 +27,19 @@
 		E7E466B51D10C7830059D2A4 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E466B41D10C7830059D2A4 /* Authentication.storyboard */; };
 		E7E466B71D10CE090059D2A4 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466B61D10CE090059D2A4 /* AuthenticationViewController.swift */; };
 		E7E466B91D11B0580059D2A4 /* Async.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E466B81D11B0580059D2A4 /* Async.framework */; };
+		E7E466BD1D11B4AA0059D2A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466BC1D11B4AA0059D2A4 /* User.swift */; };
+		E7E466BF1D11B4CD0059D2A4 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466BE1D11B4CD0059D2A4 /* Encodable.swift */; };
+		E7E466C11D11B4D90059D2A4 /* Modelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466C01D11B4D90059D2A4 /* Modelable.swift */; };
+		E7E466C31D11B52C0059D2A4 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466C21D11B52C0059D2A4 /* Database.swift */; };
+		E7E466C51D11B5F40059D2A4 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E466C41D11B5F40059D2A4 /* Argo.framework */; };
+		E7E466C71D11B6310059D2A4 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E466C61D11B6310059D2A4 /* Curry.framework */; };
+		E7E466C91D11B7370059D2A4 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E466C81D11B7370059D2A4 /* RxSwift.framework */; };
+		E7E466CB1D11B7590059D2A4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E466CA1D11B7590059D2A4 /* RxCocoa.framework */; };
+		E7E466CD1D11B7880059D2A4 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466CC1D11B7880059D2A4 /* Firebase.swift */; };
+		E7E466CF1D11B7AE0059D2A4 /* Timestampable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466CE1D11B7AE0059D2A4 /* Timestampable.swift */; };
+		E7E466D11D11B7C30059D2A4 /* Timestamps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466D01D11B7C30059D2A4 /* Timestamps.swift */; };
+		E7E466D31D11B7D70059D2A4 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466D21D11B7D70059D2A4 /* NSDate.swift */; };
+		E7E466D51D11B8820059D2A4 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466D41D11B8820059D2A4 /* AuthenticationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +78,19 @@
 		E7E466B41D10C7830059D2A4 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		E7E466B61D10CE090059D2A4 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		E7E466B81D11B0580059D2A4 /* Async.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Async.framework; path = Carthage/Build/iOS/Async.framework; sourceTree = "<group>"; };
+		E7E466BC1D11B4AA0059D2A4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E7E466BE1D11B4CD0059D2A4 /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		E7E466C01D11B4D90059D2A4 /* Modelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modelable.swift; sourceTree = "<group>"; };
+		E7E466C21D11B52C0059D2A4 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		E7E466C41D11B5F40059D2A4 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = "<group>"; };
+		E7E466C61D11B6310059D2A4 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = "<group>"; };
+		E7E466C81D11B7370059D2A4 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		E7E466CA1D11B7590059D2A4 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		E7E466CC1D11B7880059D2A4 /* Firebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		E7E466CE1D11B7AE0059D2A4 /* Timestampable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timestampable.swift; sourceTree = "<group>"; };
+		E7E466D01D11B7C30059D2A4 /* Timestamps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timestamps.swift; sourceTree = "<group>"; };
+		E7E466D21D11B7D70059D2A4 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
+		E7E466D41D11B8820059D2A4 /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		EAEF264383161D1B0E5DBE9E /* UnitTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		F4C5B4B7761ECA7AD6A3D6C2 /* Pods-Botnet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botnet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Botnet/Pods-Botnet.debug.xcconfig"; sourceTree = "<group>"; };
 		F8AFF647E21F7A652D7F2A75 /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -85,7 +111,11 @@
 			files = (
 				0312F9BB688FA47B2B8411C6 /* Foundation.framework in Frameworks */,
 				D57833939A123207147FC2F9 /* Pods_Botnet.framework in Frameworks */,
+				E7E466C51D11B5F40059D2A4 /* Argo.framework in Frameworks */,
 				E7E466B91D11B0580059D2A4 /* Async.framework in Frameworks */,
+				E7E466C71D11B6310059D2A4 /* Curry.framework in Frameworks */,
+				E7E466CB1D11B7590059D2A4 /* RxCocoa.framework in Frameworks */,
+				E7E466C91D11B7370059D2A4 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +125,9 @@
 		0226F9906295582F052D6FF8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E7E466BC1D11B4AA0059D2A4 /* User.swift */,
+				E7E466C21D11B52C0059D2A4 /* Database.swift */,
+				E7E466D01D11B7C30059D2A4 /* Timestamps.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -136,6 +169,8 @@
 				E7E466AA1D10C4FC0059D2A4 /* Swift.swift */,
 				E7E466AC1D10C5130059D2A4 /* CollectionType.swift */,
 				E7E466AE1D10C51B0059D2A4 /* Dictionary.swift */,
+				E7E466CC1D11B7880059D2A4 /* Firebase.swift */,
+				E7E466D21D11B7D70059D2A4 /* NSDate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -201,6 +236,9 @@
 		A98CFF8C62C3BF92D6B2D859 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				E7E466BE1D11B4CD0059D2A4 /* Encodable.swift */,
+				E7E466C01D11B4D90059D2A4 /* Modelable.swift */,
+				E7E466CE1D11B7AE0059D2A4 /* Timestampable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -208,6 +246,10 @@
 		B306BDBBF6B3F3D9B9EE9E9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7E466CA1D11B7590059D2A4 /* RxCocoa.framework */,
+				E7E466C81D11B7370059D2A4 /* RxSwift.framework */,
+				E7E466C61D11B6310059D2A4 /* Curry.framework */,
+				E7E466C41D11B5F40059D2A4 /* Argo.framework */,
 				E7E466B81D11B0580059D2A4 /* Async.framework */,
 				C3C5E8BA7302AC27530290F8 /* iOS */,
 				B08D4CDC009C29C2C5173265 /* Pods_Botnet.framework */,
@@ -229,6 +271,7 @@
 			children = (
 				7BD548865C59F4E0B3579851 /* AppDelegate.swift */,
 				E7E466B01D10C69B0059D2A4 /* ApplicationController.swift */,
+				E7E466D41D11B8820059D2A4 /* AuthenticationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -441,6 +484,10 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Async.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Curry.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 			);
 			name = "Copy frameworks (Carthage)";
 			outputPaths = (
@@ -530,15 +577,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7E466CD1D11B7880059D2A4 /* Firebase.swift in Sources */,
 				3025C5017E38755ED543C19F /* AppDelegate.swift in Sources */,
+				E7E466D11D11B7C30059D2A4 /* Timestamps.swift in Sources */,
 				E7E466AF1D10C51B0059D2A4 /* Dictionary.swift in Sources */,
 				E7E466AD1D10C5130059D2A4 /* CollectionType.swift in Sources */,
 				E7E466AB1D10C4FC0059D2A4 /* Swift.swift in Sources */,
 				E7E466B71D10CE090059D2A4 /* AuthenticationViewController.swift in Sources */,
 				E7E466A91D10C4A60059D2A4 /* UIStoryboard.swift in Sources */,
+				E7E466CF1D11B7AE0059D2A4 /* Timestampable.swift in Sources */,
+				E7E466D51D11B8820059D2A4 /* AuthenticationController.swift in Sources */,
 				E77F283F1D10B5620069E1F2 /* Environment.swift in Sources */,
+				E7E466C11D11B4D90059D2A4 /* Modelable.swift in Sources */,
 				E7E466B11D10C69B0059D2A4 /* ApplicationController.swift in Sources */,
+				E7E466BD1D11B4AA0059D2A4 /* User.swift in Sources */,
 				E7E466A41D10C3570059D2A4 /* ApplicationViewController.swift in Sources */,
+				E7E466D31D11B7D70059D2A4 /* NSDate.swift in Sources */,
+				E7E466C31D11B52C0059D2A4 /* Database.swift in Sources */,
+				E7E466BF1D11B4CD0059D2A4 /* Encodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

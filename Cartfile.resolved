@@ -1,1 +1,4 @@
+github "thoughtbot/Argo" "v3.0.1"
 github "duemunk/Async" "1.7.2"
+github "thoughtbot/Curry" "v2.3.0"
+github "ReactiveX/RxSwift" "2.5.0"

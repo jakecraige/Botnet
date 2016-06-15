@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Authentication Controller-->
+        <!--Authentication View Controller-->
         <scene sceneID="qM7-BB-8al">
             <objects>
-                <viewController id="4uO-tF-r5E" customClass="AuthenticationController" customModule="Botnet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4uO-tF-r5E" customClass="AuthenticationViewController" customModule="Botnet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rz0-yR-yQJ"/>
                         <viewControllerLayoutGuide type="bottom" id="n1C-bZ-7kK"/>
