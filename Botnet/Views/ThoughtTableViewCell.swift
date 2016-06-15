@@ -1,18 +1,36 @@
 import UIKit
 import Haneke
 import Reusable
+import RxSwift
+import RxCocoa
 
-final class ThoughtTableViewCell: UITableViewCell, Reusable {
+class ThoughtTableViewCell: UITableViewCell, Reusable {
   static let estimatedHeight: CGFloat = 72
+
+  var disposeBag = DisposeBag()
 
   @IBOutlet var profileImageView: UIImageView!
   @IBOutlet var nameLabel: UILabel!
   @IBOutlet var thoughtTextLabel: UILabel!
 
-  func configure() {
-    let imageURL = GravatarGenerator(email: "jake@thoughtbot.com").url
-    profileImageView.hnk_setImageFromURL(imageURL)
-    nameLabel.text = "Alex Doe"
-    thoughtTextLabel.text = "This is a thought. I think people care about these but that's not really true. I need to make this go a few lines to change stuffz"
+  func configure(thought: Thought) {
+    thoughtTextLabel.text = thought.text
+
+    thought.user()
+      .subscribeNext { [weak self] user in
+        self?.updateUIForUser(user)
+      }.addDisposableTo(disposeBag)
+  }
+
+  override func prepareForReuse() {
+    disposeBag = DisposeBag()
+  }
+}
+
+private extension ThoughtTableViewCell {
+  func updateUIForUser(user: User) {
+    let generator = GravatarGenerator(email: user.email)
+    profileImageView.hnk_setImageFromURL(generator.url)
+    nameLabel.text = user.name
   }
 }

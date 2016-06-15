@@ -1,23 +1,24 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class ThoughtsTableViewController: UITableViewController {
-}
+  let controller = ThoughtsController()
+  let disposeBag = DisposeBag()
 
-// MARK: UITableViewDataSource
-extension ThoughtsTableViewController {
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+  override func viewDidLoad() {
+    let thoughts = controller.thoughts.asObservable()
+
+    thoughts
+      .bindTo(tableView.rx_itemsWithCellIdentifier(ThoughtTableViewCell.self)) { (_, thought, cell) in
+        cell.configure(thought)
+      }
+      .addDisposableTo(disposeBag)
   }
 }
 
 // MARK: UITableViewDelegate
 extension ThoughtsTableViewController {
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell: ThoughtTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
-    cell.configure()
-    return cell
-  }
-
   override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
     return false
   }

@@ -20,6 +20,9 @@
 		E747C2A51D11CECB0080EA8D /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747C2A41D11CECB0080EA8D /* Haneke.framework */; };
 		E747C2A71D11D00C0080EA8D /* GravatarGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2A61D11D00C0080EA8D /* GravatarGenerator.swift */; };
 		E747C2A91D11D4380080EA8D /* Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747C2A81D11D4380080EA8D /* Crypto.framework */; };
+		E747C2AB1D11D91F0080EA8D /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2AA1D11D91F0080EA8D /* Thought.swift */; };
+		E747C2AD1D11DA8E0080EA8D /* ThoughtsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2AC1D11DA8E0080EA8D /* ThoughtsController.swift */; };
+		E747C2AF1D11DFD40080EA8D /* RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2AE1D11DFD40080EA8D /* RxSwift.swift */; };
 		E77F283D1D10AEE40069E1F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E77F283C1D10AEE40069E1F2 /* GoogleService-Info.plist */; };
 		E77F283F1D10B5620069E1F2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77F283E1D10B5620069E1F2 /* Environment.swift */; };
 		E7E466A41D10C3570059D2A4 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */; };
@@ -76,6 +79,9 @@
 		E747C2A41D11CECB0080EA8D /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
 		E747C2A61D11D00C0080EA8D /* GravatarGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravatarGenerator.swift; sourceTree = "<group>"; };
 		E747C2A81D11D4380080EA8D /* Crypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crypto.framework; path = Carthage/Build/iOS/Crypto.framework; sourceTree = "<group>"; };
+		E747C2AA1D11D91F0080EA8D /* Thought.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
+		E747C2AC1D11DA8E0080EA8D /* ThoughtsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThoughtsController.swift; sourceTree = "<group>"; };
+		E747C2AE1D11DFD40080EA8D /* RxSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwift.swift; sourceTree = "<group>"; };
 		E77F283C1D10AEE40069E1F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E77F283E1D10B5620069E1F2 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = Botnet/Environment.swift; sourceTree = "<group>"; };
 		E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +147,7 @@
 				E7E466C21D11B52C0059D2A4 /* Database.swift */,
 				E7E466D01D11B7C30059D2A4 /* Timestamps.swift */,
 				E747C2A61D11D00C0080EA8D /* GravatarGenerator.swift */,
+				E747C2AA1D11D91F0080EA8D /* Thought.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,6 +191,7 @@
 				E7E466AE1D10C51B0059D2A4 /* Dictionary.swift */,
 				E7E466CC1D11B7880059D2A4 /* Firebase.swift */,
 				E7E466D21D11B7D70059D2A4 /* NSDate.swift */,
+				E747C2AE1D11DFD40080EA8D /* RxSwift.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -288,6 +296,7 @@
 				7BD548865C59F4E0B3579851 /* AppDelegate.swift */,
 				E7E466B01D10C69B0059D2A4 /* ApplicationController.swift */,
 				E7E466D41D11B8820059D2A4 /* AuthenticationController.swift */,
+				E747C2AC1D11DA8E0080EA8D /* ThoughtsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -596,11 +605,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E747C2AD1D11DA8E0080EA8D /* ThoughtsController.swift in Sources */,
 				E7E466CD1D11B7880059D2A4 /* Firebase.swift in Sources */,
 				3025C5017E38755ED543C19F /* AppDelegate.swift in Sources */,
 				E747C2A71D11D00C0080EA8D /* GravatarGenerator.swift in Sources */,
 				E7E466D11D11B7C30059D2A4 /* Timestamps.swift in Sources */,
 				E7E466AF1D10C51B0059D2A4 /* Dictionary.swift in Sources */,
+				E747C2AB1D11D91F0080EA8D /* Thought.swift in Sources */,
 				E7E466AD1D10C5130059D2A4 /* CollectionType.swift in Sources */,
 				E747C29D1D11C7F20080EA8D /* ThoughtTableViewCell.swift in Sources */,
 				E7E466AB1D10C4FC0059D2A4 /* Swift.swift in Sources */,
@@ -609,6 +620,7 @@
 				E7E466CF1D11B7AE0059D2A4 /* Timestampable.swift in Sources */,
 				E7E466D51D11B8820059D2A4 /* AuthenticationController.swift in Sources */,
 				E77F283F1D10B5620069E1F2 /* Environment.swift in Sources */,
+				E747C2AF1D11DFD40080EA8D /* RxSwift.swift in Sources */,
 				E7E466C11D11B4D90059D2A4 /* Modelable.swift in Sources */,
 				E7E466B11D10C69B0059D2A4 /* ApplicationController.swift in Sources */,
 				E747C2A11D11C9280080EA8D /* ThoughtsTableViewController.swift in Sources */,
