@@ -15,6 +15,11 @@
 		CCBBA9C71EB449976C5C1B6F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55E546C9521C9B5714DBD945 /* Images.xcassets */; };
 		D57833939A123207147FC2F9 /* Pods_Botnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08D4CDC009C29C2C5173265 /* Pods_Botnet.framework */; };
 		DE53CD4715BFF97DB980830A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 906CDFA9196E62B5FFEBC50A /* Settings.bundle */; };
+		E747C29D1D11C7F20080EA8D /* ThoughtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C29C1D11C7F20080EA8D /* ThoughtTableViewCell.swift */; };
+		E747C2A11D11C9280080EA8D /* ThoughtsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2A01D11C9280080EA8D /* ThoughtsTableViewController.swift */; };
+		E747C2A51D11CECB0080EA8D /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747C2A41D11CECB0080EA8D /* Haneke.framework */; };
+		E747C2A71D11D00C0080EA8D /* GravatarGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2A61D11D00C0080EA8D /* GravatarGenerator.swift */; };
+		E747C2A91D11D4380080EA8D /* Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747C2A81D11D4380080EA8D /* Crypto.framework */; };
 		E77F283D1D10AEE40069E1F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E77F283C1D10AEE40069E1F2 /* GoogleService-Info.plist */; };
 		E77F283F1D10B5620069E1F2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77F283E1D10B5620069E1F2 /* Environment.swift */; };
 		E7E466A41D10C3570059D2A4 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */; };
@@ -66,6 +71,11 @@
 		B08D4CDC009C29C2C5173265 /* Pods_Botnet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botnet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1D261F497E5B555848E106 /* Pods-unit_tests-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests-UnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests-UnitTests/Pods-unit_tests-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		C3B04BD8229EA4EACBE9F186 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E747C29C1D11C7F20080EA8D /* ThoughtTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThoughtTableViewCell.swift; sourceTree = "<group>"; };
+		E747C2A01D11C9280080EA8D /* ThoughtsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThoughtsTableViewController.swift; sourceTree = "<group>"; };
+		E747C2A41D11CECB0080EA8D /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
+		E747C2A61D11D00C0080EA8D /* GravatarGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravatarGenerator.swift; sourceTree = "<group>"; };
+		E747C2A81D11D4380080EA8D /* Crypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crypto.framework; path = Carthage/Build/iOS/Crypto.framework; sourceTree = "<group>"; };
 		E77F283C1D10AEE40069E1F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E77F283E1D10B5620069E1F2 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = Botnet/Environment.swift; sourceTree = "<group>"; };
 		E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
@@ -113,7 +123,9 @@
 				D57833939A123207147FC2F9 /* Pods_Botnet.framework in Frameworks */,
 				E7E466C51D11B5F40059D2A4 /* Argo.framework in Frameworks */,
 				E7E466B91D11B0580059D2A4 /* Async.framework in Frameworks */,
+				E747C2A91D11D4380080EA8D /* Crypto.framework in Frameworks */,
 				E7E466C71D11B6310059D2A4 /* Curry.framework in Frameworks */,
+				E747C2A51D11CECB0080EA8D /* Haneke.framework in Frameworks */,
 				E7E466CB1D11B7590059D2A4 /* RxCocoa.framework in Frameworks */,
 				E7E466C91D11B7370059D2A4 /* RxSwift.framework in Frameworks */,
 			);
@@ -128,6 +140,7 @@
 				E7E466BC1D11B4AA0059D2A4 /* User.swift */,
 				E7E466C21D11B52C0059D2A4 /* Database.swift */,
 				E7E466D01D11B7C30059D2A4 /* Timestamps.swift */,
+				E747C2A61D11D00C0080EA8D /* GravatarGenerator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,6 +233,7 @@
 		94D5B650D86B489AE0603C2B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E747C29C1D11C7F20080EA8D /* ThoughtTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -246,6 +260,8 @@
 		B306BDBBF6B3F3D9B9EE9E9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E747C2A81D11D4380080EA8D /* Crypto.framework */,
+				E747C2A41D11CECB0080EA8D /* Haneke.framework */,
 				E7E466CA1D11B7590059D2A4 /* RxCocoa.framework */,
 				E7E466C81D11B7370059D2A4 /* RxSwift.framework */,
 				E7E466C61D11B6310059D2A4 /* Curry.framework */,
@@ -319,6 +335,7 @@
 			children = (
 				E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */,
 				E7E466B61D10CE090059D2A4 /* AuthenticationViewController.swift */,
+				E747C2A01D11C9280080EA8D /* ThoughtsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -488,6 +505,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Crypto.framework",
 			);
 			name = "Copy frameworks (Carthage)";
 			outputPaths = (
@@ -579,9 +598,11 @@
 			files = (
 				E7E466CD1D11B7880059D2A4 /* Firebase.swift in Sources */,
 				3025C5017E38755ED543C19F /* AppDelegate.swift in Sources */,
+				E747C2A71D11D00C0080EA8D /* GravatarGenerator.swift in Sources */,
 				E7E466D11D11B7C30059D2A4 /* Timestamps.swift in Sources */,
 				E7E466AF1D10C51B0059D2A4 /* Dictionary.swift in Sources */,
 				E7E466AD1D10C5130059D2A4 /* CollectionType.swift in Sources */,
+				E747C29D1D11C7F20080EA8D /* ThoughtTableViewCell.swift in Sources */,
 				E7E466AB1D10C4FC0059D2A4 /* Swift.swift in Sources */,
 				E7E466B71D10CE090059D2A4 /* AuthenticationViewController.swift in Sources */,
 				E7E466A91D10C4A60059D2A4 /* UIStoryboard.swift in Sources */,
@@ -590,6 +611,7 @@
 				E77F283F1D10B5620069E1F2 /* Environment.swift in Sources */,
 				E7E466C11D11B4D90059D2A4 /* Modelable.swift in Sources */,
 				E7E466B11D10C69B0059D2A4 /* ApplicationController.swift in Sources */,
+				E747C2A11D11C9280080EA8D /* ThoughtsTableViewController.swift in Sources */,
 				E7E466BD1D11B4AA0059D2A4 /* User.swift in Sources */,
 				E7E466A41D10C3570059D2A4 /* ApplicationViewController.swift in Sources */,
 				E7E466D31D11B7D70059D2A4 /* NSDate.swift in Sources */,

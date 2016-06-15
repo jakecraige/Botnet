@@ -13,6 +13,7 @@ target "Botnet" do
   pod "Firebase/Crash"
   pod "Firebase/Database"
   pod "FirebaseUI/AuthBase"
+  pod "Reusable"
 end
 
 abstract_target :unit_tests do
