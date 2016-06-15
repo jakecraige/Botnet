@@ -3,3 +3,4 @@
 pod install
 carthage update --platform iOS
 
+echo "Make sure to get 'Botnet-a3355c871b4d.json', 'Environment.swift' and 'GoogleService-Info.plist' from someone who has the app set up locally"
