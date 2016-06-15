@@ -1,4 +1,3 @@
-import Async
 import Firebase
 import FirebaseAuthUI
 import RxSwift
@@ -6,9 +5,16 @@ import RxSwift
 final class AuthenticationViewController: UIViewController {
   let controller = AuthenticationController()
   let disposeBag = DisposeBag()
+  let userSignedIn = PublishSubject<User>()
+  var hasPresentedFirebaseUI = false
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    // Since FirebaseUI closes itself, we need to make sure that it doesn't instantly pop back up
+    // at that point. Ideally we'd present in `viewDidLoad` but it's called before this VC is on
+    // screen
+    guard !hasPresentedFirebaseUI else { return }
+
     presentFirebaseUI()
   }
 }
@@ -18,7 +24,11 @@ extension AuthenticationViewController: FIRAuthUIDelegate {
     guard let firUser = user else { return handleAuthError(error!) }
 
     controller.save(firUser).subscribe(
-      onNext: { [weak self] _ in self?.navigateToHome() },
+      onNext: { [weak self] user in
+        guard let `self` = self else { return }
+        self.userSignedIn.onNext(user)
+        self.userSignedIn.onCompleted()
+      },
       onError: { [weak self] error in self?.handleAuthError(error) }
     ).addDisposableTo(disposeBag)
   }
@@ -29,14 +39,8 @@ private extension AuthenticationViewController {
     guard let authUI = FIRAuthUI.authUI() else { return }
     authUI.delegate = self
 
-    Async.main {
-      self.presentViewController(authUI.authViewController(), animated: true, completion: nil)
-    }
-  }
-
-  func navigateToHome() {
-    let vc = UIStoryboard.initialViewController(.Home)
-    presentViewController(vc, animated: true, completion: .None)
+    hasPresentedFirebaseUI = true
+    self.presentViewController(authUI.authViewController(), animated: true, completion: .None)
   }
 
   func handleAuthError(error: ErrorType) {

@@ -88,7 +88,13 @@
                             <outlet property="delegate" destination="sgA-BJ-AtE" id="Qo3-vS-W1M"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="bot thoughts" id="ztT-UN-3OX"/>
+                    <navigationItem key="navigationItem" title="bot thoughts" id="ztT-UN-3OX">
+                        <barButtonItem key="leftBarButtonItem" title="Sign out" id="0Cx-ez-SuX">
+                            <connections>
+                                <action selector="signOutTapped:" destination="sgA-BJ-AtE" id="h0w-Mq-PIU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eM7-TR-ZHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

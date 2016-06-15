@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 import RxSwift
 import RxCocoa
 
@@ -14,6 +15,15 @@ final class ThoughtsTableViewController: UITableViewController {
         cell.configure(thought)
       }
       .addDisposableTo(disposeBag)
+  }
+
+  @IBAction func signOutTapped(sender: UIBarButtonItem) {
+    do {
+      try FIRAuth.auth()?.signOut()
+    } catch {
+      print("Failure to sign out:")
+      print(error)
+    }
   }
 }
 

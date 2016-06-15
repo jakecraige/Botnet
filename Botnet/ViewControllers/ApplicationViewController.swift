@@ -1,6 +1,8 @@
 import UIKit
+import RxSwift
 
 final class ApplicationViewController: UIViewController {
+  let disposeBag = DisposeBag()
   let controller = ApplicationController()
   var activeViewController: UIViewController?
 
@@ -8,23 +10,36 @@ final class ApplicationViewController: UIViewController {
     super.viewDidLoad()
     
     controller.initialSetup()
-    
+
     if controller.isUserAuthenticated {
       displayHome()
     } else {
       displayAuthentication()
     }
   }
+
+  /// Watch for when a user signs out and present authentication when it happens
+  func startMonitoringAuthState() {
+    let signedOut = controller.firUser.filter { $0 == .None }
+    signedOut
+      .subscribeOn(MainScheduler.instance)
+      .subscribeNext { [weak self] _ in self?.displayAuthentication() }
+      .addDisposableTo(disposeBag)
+  }
 }
 
 private extension ApplicationViewController {
   func displayHome() {
     let vc = UIStoryboard.initialViewController(.Home)
+    startMonitoringAuthState()
     changeActiveViewController(vc)
   }
 
   func displayAuthentication() {
-    let vc = UIStoryboard.initialViewController(.Authentication)
+    let vc: AuthenticationViewController = UIStoryboard.initialViewController(.Authentication)
+    vc.userSignedIn
+      .subscribeNext { [weak self] _ in self?.displayHome() }
+      .addDisposableTo(disposeBag)
     changeActiveViewController(vc)
   }
 
