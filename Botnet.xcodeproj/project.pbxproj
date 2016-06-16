@@ -29,6 +29,9 @@
 		E747C2B71D13407A0080EA8D /* SuperDelegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747C2B61D13407A0080EA8D /* SuperDelegate.framework */; };
 		E747C2B91D1349140080EA8D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2B81D1349140080EA8D /* UIViewController.swift */; };
 		E747C2BB1D13613B0080EA8D /* ShortcutIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2BA1D13613B0080EA8D /* ShortcutIdentifier.swift */; };
+		E747C2C31D136BB30080EA8D /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2C21D136BB30080EA8D /* ShareViewController.swift */; };
+		E747C2C61D136BB30080EA8D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E747C2C41D136BB30080EA8D /* MainInterface.storyboard */; };
+		E747C2CA1D136BB30080EA8D /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E747C2C01D136BB30080EA8D /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E77F283D1D10AEE40069E1F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E77F283C1D10AEE40069E1F2 /* GoogleService-Info.plist */; };
 		E77F283F1D10B5620069E1F2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77F283E1D10B5620069E1F2 /* Environment.swift */; };
 		E7E466A41D10C3570059D2A4 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */; };
@@ -64,7 +67,28 @@
 			remoteGlobalIDString = D434D6D4E57FA9A53A046231;
 			remoteInfo = Botnet;
 		};
+		E747C2C81D136BB30080EA8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEDAE6DC1903BFD10C7DBA17 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E747C2BF1D136BB30080EA8D;
+			remoteInfo = Share;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E747C2CE1D136BB30080EA8D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E747C2CA1D136BB30080EA8D /* ShareExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		11653712A53DF2E5097A64F1 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +118,10 @@
 		E747C2B61D13407A0080EA8D /* SuperDelegate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SuperDelegate.framework; path = Carthage/Build/iOS/SuperDelegate.framework; sourceTree = "<group>"; };
 		E747C2B81D1349140080EA8D /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		E747C2BA1D13613B0080EA8D /* ShortcutIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutIdentifier.swift; sourceTree = "<group>"; };
+		E747C2C01D136BB30080EA8D /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E747C2C21D136BB30080EA8D /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		E747C2C51D136BB30080EA8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		E747C2C71D136BB30080EA8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E77F283C1D10AEE40069E1F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E77F283E1D10B5620069E1F2 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = Botnet/Environment.swift; sourceTree = "<group>"; };
 		E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +175,13 @@
 				E7E466CB1D11B7590059D2A4 /* RxCocoa.framework in Frameworks */,
 				E7E466C91D11B7370059D2A4 /* RxSwift.framework in Frameworks */,
 				E747C2B71D13407A0080EA8D /* SuperDelegate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E747C2BD1D136BB30080EA8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +368,7 @@
 				7D9FA2B9EF8820F27957AECB /* Botnet */,
 				E77F283E1D10B5620069E1F2 /* Environment.swift */,
 				74D5036886D499F01B3DF042 /* UnitTests */,
+				E747C2C11D136BB30080EA8D /* ShareExtension */,
 				B306BDBBF6B3F3D9B9EE9E9C /* Frameworks */,
 				F77DA4EA0E0F4BE0728D3F4E /* Products */,
 				304993C012603D350600EE6D /* Pods */,
@@ -357,6 +393,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		E747C2C11D136BB30080EA8D /* ShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				E747C2C21D136BB30080EA8D /* ShareViewController.swift */,
+				E747C2C41D136BB30080EA8D /* MainInterface.storyboard */,
+				E747C2C71D136BB30080EA8D /* Info.plist */,
+			);
+			name = ShareExtension;
+			path = Share;
+			sourceTree = "<group>";
+		};
 		E7E466A71D10C3E70059D2A4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +420,7 @@
 			children = (
 				1CACFD2BA3B5D396119A5488 /* Botnet.app */,
 				11653712A53DF2E5097A64F1 /* UnitTests.xctest */,
+				E747C2C01D136BB30080EA8D /* ShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -414,15 +462,34 @@
 				02AB7F80FB790B2297357289 /* Warn for TODO and FIXME comments */,
 				6106EF2348DC509BF6A4F368 /* Copy frameworks (Carthage) */,
 				E77F28401D10B73A0069E1F2 /* Upload Symbols to Firebase */,
+				E747C2CE1D136BB30080EA8D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E747C2C91D136BB30080EA8D /* PBXTargetDependency */,
 			);
 			name = Botnet;
 			productName = Botnet;
 			productReference = 1CACFD2BA3B5D396119A5488 /* Botnet.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E747C2BF1D136BB30080EA8D /* ShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E747C2CB1D136BB30080EA8D /* Build configuration list for PBXNativeTarget "ShareExtension" */;
+			buildPhases = (
+				E747C2BC1D136BB30080EA8D /* Sources */,
+				E747C2BD1D136BB30080EA8D /* Frameworks */,
+				E747C2BE1D136BB30080EA8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareExtension;
+			productName = Share;
+			productReference = E747C2C01D136BB30080EA8D /* ShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -431,9 +498,14 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = "";
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = thoughtbot;
+				TargetAttributes = {
+					E747C2BF1D136BB30080EA8D = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
 			};
 			buildConfigurationList = C5215157C70B51A57F34E4DB /* Build configuration list for PBXProject "Botnet" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -441,6 +513,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = C9D755AB3F9571FC787AA4B5;
 			productRefGroup = F77DA4EA0E0F4BE0728D3F4E /* Products */;
@@ -449,6 +522,7 @@
 			targets = (
 				D434D6D4E57FA9A53A046231 /* Botnet */,
 				6B51FBCB719E71DADB5B0EF7 /* UnitTests */,
+				E747C2BF1D136BB30080EA8D /* ShareExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -472,6 +546,14 @@
 				E7E466B31D10C7790059D2A4 /* Home.storyboard in Resources */,
 				3BD5D09F0118F5817BC8D19F /* LaunchScreen.xib in Resources */,
 				DE53CD4715BFF97DB980830A /* Settings.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E747C2BE1D136BB30080EA8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E747C2C61D136BB30080EA8D /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,6 +746,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E747C2BC1D136BB30080EA8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E747C2C31D136BB30080EA8D /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -673,7 +763,23 @@
 			target = D434D6D4E57FA9A53A046231 /* Botnet */;
 			targetProxy = 2960B026059B57DCAB2B3E5C /* PBXContainerItemProxy */;
 		};
+		E747C2C91D136BB30080EA8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E747C2BF1D136BB30080EA8D /* ShareExtension */;
+			targetProxy = E747C2C81D136BB30080EA8D /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E747C2C41D136BB30080EA8D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E747C2C51D136BB30080EA8D /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1B33B158F4A6329F81DFEC9C /* Debug */ = {
@@ -682,6 +788,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -752,6 +859,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -824,6 +932,50 @@
 			};
 			name = Debug;
 		};
+		E747C2CC1D136BB30080EA8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = Share/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.Botnet.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E747C2CD1D136BB30080EA8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = Share/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.Botnet.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		EBDAD85B2162D65EBE10B93E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BD1D261F497E5B555848E106 /* Pods-unit_tests-UnitTests.release.xcconfig */;
@@ -895,6 +1047,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E747C2CB1D136BB30080EA8D /* Build configuration list for PBXNativeTarget "ShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E747C2CC1D136BB30080EA8D /* Debug */,
+				E747C2CD1D136BB30080EA8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
