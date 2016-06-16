@@ -17,6 +17,8 @@ final class ThoughtsTableViewController: UITableViewController {
       .addDisposableTo(disposeBag)
   }
 
+  @IBAction func unwindToThoughts(segue: UIStoryboardSegue) {}
+
   @IBAction func signOutTapped(sender: UIBarButtonItem) {
     do {
       try FIRAuth.auth()?.signOut()

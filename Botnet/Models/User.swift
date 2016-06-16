@@ -2,7 +2,7 @@ import Curry
 import Argo
 
 struct User: Modelable, Timestampable {
-  var id: String?
+  var id: String
   var timestamps: Timestamps?
   var name: String
   var email: String

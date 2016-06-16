@@ -94,11 +94,84 @@
                                 <action selector="signOutTapped:" destination="sgA-BJ-AtE" id="h0w-Mq-PIU"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Z3K-sR-YVd">
+                            <connections>
+                                <segue destination="kY8-eG-VB4" kind="presentation" id="aAm-5P-Pu9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eM7-TR-ZHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Rxt-JF-8Hy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1197" y="388"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="g7D-bM-B3a">
+            <objects>
+                <navigationController id="kY8-eG-VB4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nZ8-NX-pnV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Koc-cy-qw0" kind="relationship" relationship="rootViewController" id="2lS-X5-mLi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yc6-54-DJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1908" y="-308"/>
+        </scene>
+        <!--Compose-->
+        <scene sceneID="CaG-ea-YVW">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Koc-cy-qw0" customClass="ComposeViewController" customModule="Botnet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GCV-33-6Ni"/>
+                        <viewControllerLayoutGuide type="bottom" id="YAv-QW-3MS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yGq-iJ-9Fb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H3a-Fo-BYR">
+                                <rect key="frame" x="20" y="72" width="560" height="508"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Koc-cy-qw0" id="e1K-rK-r6m"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YAv-QW-3MS" firstAttribute="top" secondItem="H3a-Fo-BYR" secondAttribute="bottom" constant="20" id="OGu-qL-qU8"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="H3a-Fo-BYR" secondAttribute="leading" id="TeX-bf-3xc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H3a-Fo-BYR" secondAttribute="trailing" id="bVf-aM-wta"/>
+                            <constraint firstItem="H3a-Fo-BYR" firstAttribute="top" secondItem="GCV-33-6Ni" secondAttribute="bottom" constant="8" id="fZa-kY-UpX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Compose" id="Mtc-Qf-59C">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="qyW-nG-Igh">
+                            <connections>
+                                <segue destination="Rxt-JF-8Hy" kind="unwind" unwindAction="unwindToThoughts:" id="rTw-EF-N8i"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="PPJ-ub-vfp">
+                            <connections>
+                                <action selector="postTapped:" destination="Koc-cy-qw0" id="5Hp-Qr-yMG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="postButton" destination="PPJ-ub-vfp" id="GXk-ia-MfY"/>
+                        <outlet property="textView" destination="H3a-Fo-BYR" id="BqI-Bc-M7t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fsK-wl-hOx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2600" y="-308"/>
         </scene>
     </scenes>
 </document>

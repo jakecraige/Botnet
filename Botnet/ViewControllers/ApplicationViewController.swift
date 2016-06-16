@@ -31,14 +31,22 @@ final class ApplicationViewController: UIViewController {
 private extension ApplicationViewController {
   func displayHome() {
     let vc = UIStoryboard.initialViewController(.Home)
-    startMonitoringAuthState()
-    changeActiveViewController(vc)
+    controller.user()
+      .subscribeNext { [unowned self] user in
+        session.user = user
+        self.startMonitoringAuthState()
+        self.changeActiveViewController(vc)
+      }
+      .addDisposableTo(disposeBag)
   }
 
   func displayAuthentication() {
     let vc: AuthenticationViewController = UIStoryboard.initialViewController(.Authentication)
     vc.userSignedIn
-      .subscribeNext { [weak self] _ in self?.displayHome() }
+      .subscribeNext { [weak self] user in
+        session.user = user
+        self?.displayHome()
+      }
       .addDisposableTo(disposeBag)
     changeActiveViewController(vc)
   }

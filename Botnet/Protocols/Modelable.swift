@@ -6,8 +6,9 @@ protocol Modelable: Decodable, Encodable, Equatable {
   static var ref: FIRDatabaseReference { get }
   static func getChildRef(id: String) -> FIRDatabaseReference
 
-  /// The key stored in Firebase. This is also used to tell if an object is persisted or not.
-  var id: String? { get }
+  /// The key stored in Firebase. This is also used to tell if an object is persisted or not by 
+  /// it being empty.
+  var id: String { get }
   var childRef: FIRDatabaseReference { get }
   var isPersisted: Bool { get }
 }
@@ -26,7 +27,7 @@ extension Modelable {
   }
 
   var childRef: FIRDatabaseReference {
-    if let id = id {
+    if isPersisted {
       return Self.ref.child(id)
     } else {
       return Self.ref.childByAutoId()
@@ -34,14 +35,10 @@ extension Modelable {
   }
 
   var isPersisted: Bool {
-    return id != .None
+    return id != ""
   }
 }
 
 func == <Model: Modelable>(lhs: Model, rhs: Model) -> Bool {
-  if let lhsId = lhs.id, let rhsId = rhs.id {
-    return lhsId == rhsId
-  } else {
-    return false
-  }
+  return lhs.id == rhs.id
 }

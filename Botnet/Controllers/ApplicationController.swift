@@ -24,4 +24,11 @@ final class ApplicationController {
   func initialSetup() {
     FIRApp.configure()
   }
+
+  func user() -> Observable<User> {
+    return firUser
+      .filter { $0 != .None }
+      .map { $0!.uid }
+      .flatMap { uid in Database.observeObject(ref: User.getChildRef(uid)) }
+  }
 }

@@ -3,13 +3,13 @@ import Argo
 import RxSwift
 
 struct Thought: Modelable, Timestampable {
-  var id: String?
+  var id: String
   var timestamps: Timestamps?
   var userID: String
   var text: String
 
-  func new() -> Thought {
-    return .init(id: .None, timestamps: .None, userID: "", text: "")
+  static func new() -> Thought {
+    return .init(id: "", timestamps: .None, userID: "", text: "")
   }
 
   func user() -> Observable<User> {
@@ -20,7 +20,7 @@ struct Thought: Modelable, Timestampable {
 extension Thought: Decodable {
   static func decode(json: JSON) -> Decoded<Thought> {
     return curry(Thought.init)
-      <^> json <|? "id"
+      <^> json <| "id"
       <*> json <|? "timestamps"
       <*> json <| "user_id"
       <*> json <| "text"

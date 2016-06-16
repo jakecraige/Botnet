@@ -7,7 +7,7 @@ final class ThoughtsController {
   var thoughts = Variable([Thought]())
 
   init() {
-    Database.observeArray()
+    Database.observeArray(orderBy: "createdAt", sort: .desc)
       .bindTo(self.thoughts)
       .addDisposableTo(disposeBag)
   }
