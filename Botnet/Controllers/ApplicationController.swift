@@ -28,7 +28,8 @@ final class ApplicationController {
   func user() -> Observable<User> {
     return firUser
       .filter { $0 != .None }
-      .map { $0!.uid }
-      .flatMap { uid in Database.observeObject(ref: User.getChildRef(uid)) }
+      .map { $0! }
+      .flatMap { user in user.getToken(forceRefresh: true).map { _ in user } }
+      .flatMap { user in Database.observeObject(ref: User.getChildRef(user.uid)) }
   }
 }

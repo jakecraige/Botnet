@@ -25,6 +25,7 @@
 		E747C2AF1D11DFD40080EA8D /* RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2AE1D11DFD40080EA8D /* RxSwift.swift */; };
 		E747C2B11D1214070080EA8D /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2B01D1214070080EA8D /* ComposeViewController.swift */; };
 		E747C2B31D1219900080EA8D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2B21D1219900080EA8D /* Session.swift */; };
+		E747C2B51D1320010080EA8D /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2B41D1320010080EA8D /* NSError.swift */; };
 		E77F283D1D10AEE40069E1F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E77F283C1D10AEE40069E1F2 /* GoogleService-Info.plist */; };
 		E77F283F1D10B5620069E1F2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77F283E1D10B5620069E1F2 /* Environment.swift */; };
 		E7E466A41D10C3570059D2A4 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */; };
@@ -86,6 +87,7 @@
 		E747C2AE1D11DFD40080EA8D /* RxSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwift.swift; sourceTree = "<group>"; };
 		E747C2B01D1214070080EA8D /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		E747C2B21D1219900080EA8D /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E747C2B41D1320010080EA8D /* NSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
 		E77F283C1D10AEE40069E1F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E77F283E1D10B5620069E1F2 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = Botnet/Environment.swift; sourceTree = "<group>"; };
 		E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				E7E466CC1D11B7880059D2A4 /* Firebase.swift */,
 				E7E466D21D11B7D70059D2A4 /* NSDate.swift */,
 				E747C2AE1D11DFD40080EA8D /* RxSwift.swift */,
+				E747C2B41D1320010080EA8D /* NSError.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				E7E466AF1D10C51B0059D2A4 /* Dictionary.swift in Sources */,
 				E747C2AB1D11D91F0080EA8D /* Thought.swift in Sources */,
 				E7E466AD1D10C5130059D2A4 /* CollectionType.swift in Sources */,
+				E747C2B51D1320010080EA8D /* NSError.swift in Sources */,
 				E747C29D1D11C7F20080EA8D /* ThoughtTableViewCell.swift in Sources */,
 				E7E466AB1D10C4FC0059D2A4 /* Swift.swift in Sources */,
 				E7E466B71D10CE090059D2A4 /* AuthenticationViewController.swift in Sources */,
