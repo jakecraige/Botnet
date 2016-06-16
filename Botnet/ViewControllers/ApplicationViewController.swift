@@ -9,13 +9,30 @@ final class ApplicationViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    controller.initialSetup()
+    controller.initialSetup(UIApplication.sharedApplication())
 
     if controller.isUserAuthenticated {
       displayHome()
     } else {
       displayAuthentication()
     }
+  }
+
+  func handleShortcutItem(item: ShortcutIdentifier) {
+    switch item {
+    case .composeThought: composeThought()
+    }
+  }
+}
+
+private extension ApplicationViewController {
+  func composeThought() {
+    guard let navVC = activeViewController as? UINavigationController,
+          let vc = navVC.topViewController as? ThoughtsTableViewController else {
+      NSLog("Attempted to compose thought but not viewing the ThoughtsTableViewController")
+      return
+    }
+    vc.performSegue(.composeThought)
   }
 
   /// Watch for when a user signs out and present authentication when it happens
@@ -26,9 +43,7 @@ final class ApplicationViewController: UIViewController {
       .subscribeNext { [weak self] _ in self?.displayAuthentication() }
       .addDisposableTo(disposeBag)
   }
-}
 
-private extension ApplicationViewController {
   func displayHome() {
     let vc = UIStoryboard.initialViewController(.Home)
     controller.user()

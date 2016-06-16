@@ -2,6 +2,9 @@ import Firebase
 import RxSwift
 
 final class ApplicationController {
+  let disposeBag = DisposeBag()
+  var application: UIApplication?
+
   var isUserAuthenticated: Bool {
     guard let auth = FIRAuth.auth() else { return false }
     return auth.currentUser != .None
@@ -21,8 +24,15 @@ final class ApplicationController {
     }.shareReplay(1)
   }()
 
-  func initialSetup() {
+  func initialSetup(application: UIApplication) {
+    self.application = application
     FIRApp.configure()
+
+    firUser
+      .map { $0?.uid ?? "" }
+      .distinctUntilChanged()
+      .subscribeNext { [weak self] _ in self?.configureShortcutItems() }
+      .addDisposableTo(disposeBag)
   }
 
   func user() -> Observable<User> {
@@ -31,5 +41,15 @@ final class ApplicationController {
       .map { $0! }
       .flatMap { user in user.getToken(forceRefresh: true).map { _ in user } }
       .flatMap { user in Database.observeObject(ref: User.getChildRef(user.uid)) }
+  }
+
+  func configureShortcutItems() {
+    guard let application = application else { return }
+
+    if isUserAuthenticated {
+      application.shortcutItems = [ShortcutIdentifier.composeThought.asShortcutItem]
+    } else {
+      application.shortcutItems = []
+    }
   }
 }

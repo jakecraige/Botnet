@@ -26,6 +26,9 @@
 		E747C2B11D1214070080EA8D /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2B01D1214070080EA8D /* ComposeViewController.swift */; };
 		E747C2B31D1219900080EA8D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2B21D1219900080EA8D /* Session.swift */; };
 		E747C2B51D1320010080EA8D /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2B41D1320010080EA8D /* NSError.swift */; };
+		E747C2B71D13407A0080EA8D /* SuperDelegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747C2B61D13407A0080EA8D /* SuperDelegate.framework */; };
+		E747C2B91D1349140080EA8D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2B81D1349140080EA8D /* UIViewController.swift */; };
+		E747C2BB1D13613B0080EA8D /* ShortcutIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2BA1D13613B0080EA8D /* ShortcutIdentifier.swift */; };
 		E77F283D1D10AEE40069E1F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E77F283C1D10AEE40069E1F2 /* GoogleService-Info.plist */; };
 		E77F283F1D10B5620069E1F2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77F283E1D10B5620069E1F2 /* Environment.swift */; };
 		E7E466A41D10C3570059D2A4 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */; };
@@ -88,6 +91,9 @@
 		E747C2B01D1214070080EA8D /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		E747C2B21D1219900080EA8D /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		E747C2B41D1320010080EA8D /* NSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
+		E747C2B61D13407A0080EA8D /* SuperDelegate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SuperDelegate.framework; path = Carthage/Build/iOS/SuperDelegate.framework; sourceTree = "<group>"; };
+		E747C2B81D1349140080EA8D /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		E747C2BA1D13613B0080EA8D /* ShortcutIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutIdentifier.swift; sourceTree = "<group>"; };
 		E77F283C1D10AEE40069E1F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E77F283E1D10B5620069E1F2 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = Botnet/Environment.swift; sourceTree = "<group>"; };
 		E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 				E747C2A51D11CECB0080EA8D /* Haneke.framework in Frameworks */,
 				E7E466CB1D11B7590059D2A4 /* RxCocoa.framework in Frameworks */,
 				E7E466C91D11B7370059D2A4 /* RxSwift.framework in Frameworks */,
+				E747C2B71D13407A0080EA8D /* SuperDelegate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +162,7 @@
 				E747C2A61D11D00C0080EA8D /* GravatarGenerator.swift */,
 				E747C2AA1D11D91F0080EA8D /* Thought.swift */,
 				E747C2B21D1219900080EA8D /* Session.swift */,
+				E747C2BA1D13613B0080EA8D /* ShortcutIdentifier.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +208,7 @@
 				E7E466D21D11B7D70059D2A4 /* NSDate.swift */,
 				E747C2AE1D11DFD40080EA8D /* RxSwift.swift */,
 				E747C2B41D1320010080EA8D /* NSError.swift */,
+				E747C2B81D1349140080EA8D /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -276,6 +285,7 @@
 		B306BDBBF6B3F3D9B9EE9E9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E747C2B61D13407A0080EA8D /* SuperDelegate.framework */,
 				E747C2A81D11D4380080EA8D /* Crypto.framework */,
 				E747C2A41D11CECB0080EA8D /* Haneke.framework */,
 				E7E466CA1D11B7590059D2A4 /* RxCocoa.framework */,
@@ -525,6 +535,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Crypto.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SuperDelegate.framework",
 			);
 			name = "Copy frameworks (Carthage)";
 			outputPaths = (
@@ -628,9 +639,11 @@
 				E7E466B71D10CE090059D2A4 /* AuthenticationViewController.swift in Sources */,
 				E7E466A91D10C4A60059D2A4 /* UIStoryboard.swift in Sources */,
 				E7E466CF1D11B7AE0059D2A4 /* Timestampable.swift in Sources */,
+				E747C2B91D1349140080EA8D /* UIViewController.swift in Sources */,
 				E7E466D51D11B8820059D2A4 /* AuthenticationController.swift in Sources */,
 				E77F283F1D10B5620069E1F2 /* Environment.swift in Sources */,
 				E747C2AF1D11DFD40080EA8D /* RxSwift.swift in Sources */,
+				E747C2BB1D13613B0080EA8D /* ShortcutIdentifier.swift in Sources */,
 				E7E466C11D11B4D90059D2A4 /* Modelable.swift in Sources */,
 				E7E466B11D10C69B0059D2A4 /* ApplicationController.swift in Sources */,
 				E747C2A11D11C9280080EA8D /* ThoughtsTableViewController.swift in Sources */,

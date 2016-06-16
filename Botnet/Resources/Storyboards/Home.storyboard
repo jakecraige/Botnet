@@ -96,7 +96,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Z3K-sR-YVd">
                             <connections>
-                                <segue destination="kY8-eG-VB4" kind="presentation" id="aAm-5P-Pu9"/>
+                                <segue destination="kY8-eG-VB4" kind="presentation" identifier="composeThought" id="aAm-5P-Pu9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

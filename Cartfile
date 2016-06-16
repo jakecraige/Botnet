@@ -4,3 +4,4 @@ github "thoughtbot/Curry"
 github "ReactiveX/RxSwift" ~> 2.0
 github "Haneke/HanekeSwift" "v0.10.1"
 github "soffes/Crypto" "v0.3.0"
+github "Square/SuperDelegate" "0.8.0"
