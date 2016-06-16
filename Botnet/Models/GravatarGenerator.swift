@@ -1,13 +1,14 @@
 import Foundation
+import UIKit
 import Crypto
 
 struct GravatarGenerator {
   let email: String
-  let size: Int
+  let size: Float
 
-  init(email: String, size: Int = 30) {
+  init(email: String, size: Float = 30) {
     self.email = email
-    self.size = size
+    self.size = size * Float(UIScreen.mainScreen().scale)
   }
 
   var url: NSURL {
