@@ -1,3 +1,3 @@
-protocol Timestampable {
+public protocol Timestampable {
   var timestamps: Timestamps? { get }
 }

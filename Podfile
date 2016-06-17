@@ -1,29 +1,33 @@
 source "https://github.com/CocoaPods/Specs"
 
 platform :ios, "9.0"
-
-# Uncomment this line if you use Swift
+workspace "Botnet"
 use_frameworks!
 
-target_name = "Botnet"
-
-target "Botnet" do
+def shared_pods
   pod "Firebase"
   pod "Firebase/Auth"
   pod "Firebase/Crash"
   pod "Firebase/Database"
   pod "FirebaseUI/AuthBase"
+end
+
+target "Botnet" do
+  shared_pods
   pod "Reusable"
 end
 
-abstract_target :unit_tests do
-  target "UnitTests"
+target "BotnetKit" do
+  project "BotnetKit/BotnetKit"
+  shared_pods
 end
 
-post_install do | installer |
-  require "fileutils"
+post_install do |installer|
+  copy_acknowledgements_to_settings
+end
 
-  pods_prefix = "Pods-#{target_name}"
+def copy_acknowledgements_to_settings
+  pods_prefix = "Pods-Botnet"
   pods_acknowledgements_path =
     "Pods/Target Support Files/#{pods_prefix}/#{pods_prefix}-Acknowledgements.plist"
   settings_bundle_path = Dir.glob("**/*Settings.bundle*").first
@@ -37,4 +41,3 @@ post_install do | installer |
     )
   end
 end
-

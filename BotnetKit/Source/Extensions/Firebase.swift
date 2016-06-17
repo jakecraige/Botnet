@@ -9,7 +9,7 @@ extension FIRDataSnapshot {
   }
 }
 
-extension FIRUser {
+public extension FIRUser {
   func getToken(forceRefresh forceRefresh: Bool) -> Observable<String> {
     return Observable.create { observer in
       self.getTokenForcingRefresh(forceRefresh) { (token, error) in

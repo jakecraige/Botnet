@@ -1,6 +1,6 @@
 import Foundation
 
-extension NSError {
+public extension NSError {
   static func botnet(errorDescription: String) -> NSError {
     return NSError(
       domain: "com.thoughtbot.Botnet",

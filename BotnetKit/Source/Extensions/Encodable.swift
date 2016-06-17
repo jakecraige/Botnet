@@ -1,6 +1,6 @@
 import Foundation
 
-protocol Encodable {
+public protocol Encodable {
   /// Returns a dictionary encoding of this object
   func encode() -> [String: AnyObject]
 }

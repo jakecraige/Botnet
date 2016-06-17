@@ -1,5 +1,6 @@
 import UIKit
 import SuperDelegate
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: SuperDelegate, ApplicationLaunched {

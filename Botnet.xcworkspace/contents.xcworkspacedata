@@ -5,6 +5,9 @@
       location = "group:Botnet.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:BotnetKit/BotnetKit.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

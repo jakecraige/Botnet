@@ -1,6 +1,7 @@
 import Curry
 import Argo
 import RxSwift
+import BotnetKit
 
 struct Thought: Modelable, Timestampable {
   var id: String

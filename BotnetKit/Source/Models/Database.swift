@@ -2,7 +2,7 @@ import Argo
 import Firebase
 import RxSwift
 
-enum SortOrder {
+public enum SortOrder {
   /// Ascending - order a..z, 1..9
   case asc
   /// Descending order z..a, 9..1
@@ -10,7 +10,7 @@ enum SortOrder {
 }
 
 /// Returned when a reference you try to subscribe to doesn't exist
-struct NullRefError: ErrorType {
+public struct NullRefError: ErrorType {
   let message: String
   var debugDescription: String { return message }
 
@@ -19,8 +19,8 @@ struct NullRefError: ErrorType {
   }
 }
 
-struct Database<Model: Modelable where Model.DecodedType == Model> {
-  static func save(model: Model) -> String {
+public struct Database<Model: Modelable where Model.DecodedType == Model> {
+  public static func save(model: Model) -> String {
     let ref = model.childRef
     var values = model.encode()
 
@@ -35,11 +35,11 @@ struct Database<Model: Modelable where Model.DecodedType == Model> {
     return ref.key
   }
 
-  static func delete(model: Model) {
+  public static func delete(model: Model) {
     model.childRef.removeValue()
   }
 
-  static func exists(model: Model) -> Observable<Bool> {
+  public static func exists(model: Model) -> Observable<Bool> {
     return Observable.create { observer in
       model.childRef.observeSingleEventOfType(
         .Value,
@@ -56,7 +56,7 @@ struct Database<Model: Modelable where Model.DecodedType == Model> {
     }
   }
 
-  static func find(
+  public static func find(
     eventType eventType: FIRDataEventType = .Value,
               ref: FIRDatabaseQuery = Model.ref,
               ids: [String]
@@ -66,7 +66,7 @@ struct Database<Model: Modelable where Model.DecodedType == Model> {
     return queries.combineLatest { $0 }
   }
 
-  static func allWhere(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref, key: String, value: AnyObject) -> Observable<[Model]> {
+  public static func allWhere(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref, key: String, value: AnyObject) -> Observable<[Model]> {
     let query = ref.queryOrderedByChild(key).queryStartingAtValue(value).queryEndingAtValue(value)
     return Observable.create { observer in
       let observerHandle = query.observeEventType(
@@ -81,7 +81,7 @@ struct Database<Model: Modelable where Model.DecodedType == Model> {
     }
   }
 
-  static func observeArray(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref, orderBy: String? = .None, sort: SortOrder = .asc) -> Observable<[Model]> {
+  public static func observeArray(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref, orderBy: String? = .None, sort: SortOrder = .asc) -> Observable<[Model]> {
     var query = ref
     return Observable.create { observer in
       if let orderBy = orderBy {
@@ -99,7 +99,7 @@ struct Database<Model: Modelable where Model.DecodedType == Model> {
     }
   }
 
-  static func observeObject(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref) -> Observable<Model> {
+  public static func observeObject(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref) -> Observable<Model> {
     return Observable.create { observer in
       let observerHandle = ref.observeEventType(
         eventType,
@@ -118,7 +118,7 @@ struct Database<Model: Modelable where Model.DecodedType == Model> {
     }
   }
 
-  static func observeArrayOnce(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref, orderBy: String? = .None, sort: SortOrder = .asc) -> Observable<[Model]> {
+  public static func observeArrayOnce(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref, orderBy: String? = .None, sort: SortOrder = .asc) -> Observable<[Model]> {
     var query = ref
     return Observable.create { observer in
       if let orderBy = orderBy {
@@ -134,7 +134,7 @@ struct Database<Model: Modelable where Model.DecodedType == Model> {
     }
   }
 
-  static func observeObjectOnce(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref) -> Observable<Model> {
+  public static func observeObjectOnce(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref) -> Observable<Model> {
     return Observable.create { observer in
       ref.observeSingleEventOfType(
         eventType,
@@ -173,7 +173,7 @@ private extension Database {
       .flatMap(decodeAndLogError)
   }
 
-  private static func decodeAndLogError(dict: [String: AnyObject]) -> Model? {
+  static func decodeAndLogError(dict: [String: AnyObject]) -> Model? {
     switch decode(dict) as Decoded<Model> {
     case let .Success(obj):
       return obj

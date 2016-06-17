@@ -1,7 +1,7 @@
-import Firebase
 import Argo
+import Firebase
 
-protocol Modelable: Decodable, Encodable, Equatable {
+public protocol Modelable: Decodable, Encodable, Equatable {
   static var refName: String { get }
   static var ref: FIRDatabaseReference { get }
   static func getChildRef(id: String) -> FIRDatabaseReference
@@ -13,12 +13,15 @@ protocol Modelable: Decodable, Encodable, Equatable {
   var isPersisted: Bool { get }
 }
 
-extension Modelable {
+public extension Modelable {
   static var refName: String {
     return "\(self)s"
   }
 
   static var ref: FIRDatabaseReference {
+    // Wow. Hacks. Seemingly race condition where this is called before configure *shurugs*
+    if FIRApp.defaultApp() == .None { FIRApp.configure() }
+
     return FIRDatabase.database().reference().child(refName)
   }
 
@@ -39,6 +42,6 @@ extension Modelable {
   }
 }
 
-func == <Model: Modelable>(lhs: Model, rhs: Model) -> Bool {
+public func == <Model: Modelable>(lhs: Model, rhs: Model) -> Bool {
   return lhs.id == rhs.id
 }
