@@ -25,6 +25,12 @@
 		E747C3991D1386A10080EA8D /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747C3951D1386A10080EA8D /* Curry.framework */; };
 		E747C39A1D1386A10080EA8D /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747C3961D1386A10080EA8D /* RxCocoa.framework */; };
 		E747C39B1D1386A10080EA8D /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747C3971D1386A10080EA8D /* RxSwift.framework */; };
+		E747C3AD1D13956D0080EA8D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C3AC1D13956D0080EA8D /* User.swift */; };
+		E747C3AF1D1395740080EA8D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C3AE1D1395740080EA8D /* Session.swift */; };
+		E747C3B11D1395790080EA8D /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C3B01D1395790080EA8D /* Thought.swift */; };
+		E747C3B31D1395DB0080EA8D /* GravatarGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C3B21D1395DB0080EA8D /* GravatarGenerator.swift */; };
+		E747C3B51D13960E0080EA8D /* Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747C3B41D13960E0080EA8D /* Crypto.framework */; };
+		E747C3BC1D1399580080EA8D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E747C3BB1D1399580080EA8D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +66,12 @@
 		E747C3951D1386A10080EA8D /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = ../Carthage/Build/iOS/Curry.framework; sourceTree = "<group>"; };
 		E747C3961D1386A10080EA8D /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		E747C3971D1386A10080EA8D /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		E747C3AC1D13956D0080EA8D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E747C3AE1D1395740080EA8D /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E747C3B01D1395790080EA8D /* Thought.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
+		E747C3B21D1395DB0080EA8D /* GravatarGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravatarGenerator.swift; sourceTree = "<group>"; };
+		E747C3B41D13960E0080EA8D /* Crypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crypto.framework; path = ../Carthage/Build/iOS/Crypto.framework; sourceTree = "<group>"; };
+		E747C3BB1D1399580080EA8D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA0263F419105FA28C50C212 /* Pods_BotnetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BotnetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,6 +82,7 @@
 			files = (
 				CB21541D67D4B3EEADCEEC4C /* Pods_BotnetKit.framework in Frameworks */,
 				E747C3981D1386A10080EA8D /* Argo.framework in Frameworks */,
+				E747C3B51D13960E0080EA8D /* Crypto.framework in Frameworks */,
 				E747C3991D1386A10080EA8D /* Curry.framework in Frameworks */,
 				E747C39A1D1386A10080EA8D /* RxCocoa.framework in Frameworks */,
 				E747C39B1D1386A10080EA8D /* RxSwift.framework in Frameworks */,
@@ -90,6 +103,7 @@
 		1E8C4F8CC72D77B2EB3A67FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E747C3B41D13960E0080EA8D /* Crypto.framework */,
 				E747C3941D1386A10080EA8D /* Argo.framework */,
 				E747C3951D1386A10080EA8D /* Curry.framework */,
 				E747C3961D1386A10080EA8D /* RxCocoa.framework */,
@@ -117,7 +131,9 @@
 				44556B7C82CD36162F2B7F2D /* Pods */,
 				1E8C4F8CC72D77B2EB3A67FE /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		E747C35F1D1381EA0080EA8D /* Products */ = {
 			isa = PBXGroup;
@@ -152,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				E747C3921D1383540080EA8D /* Info.plist */,
+				E747C3BB1D1399580080EA8D /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -184,6 +201,10 @@
 			children = (
 				E747C38E1D1383460080EA8D /* Database.swift */,
 				E747C38F1D1383460080EA8D /* Timestamps.swift */,
+				E747C3AC1D13956D0080EA8D /* User.swift */,
+				E747C3AE1D1395740080EA8D /* Session.swift */,
+				E747C3B01D1395790080EA8D /* Thought.swift */,
+				E747C3B21D1395DB0080EA8D /* GravatarGenerator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E747C3BC1D1399580080EA8D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,12 +357,16 @@
 				E747C38D1D13833E0080EA8D /* Timestampable.swift in Sources */,
 				E747C38B1D13833E0080EA8D /* Encodable.swift in Sources */,
 				E747C3871D13832D0080EA8D /* Swift.swift in Sources */,
+				E747C3B11D1395790080EA8D /* Thought.swift in Sources */,
 				E747C3821D13832D0080EA8D /* CollectionType.swift in Sources */,
 				E747C3851D13832D0080EA8D /* NSDate.swift in Sources */,
+				E747C3AF1D1395740080EA8D /* Session.swift in Sources */,
 				E747C3831D13832D0080EA8D /* Dictionary.swift in Sources */,
+				E747C3AD1D13956D0080EA8D /* User.swift in Sources */,
 				E747C3861D13832D0080EA8D /* NSError.swift in Sources */,
 				E747C3901D1383460080EA8D /* Database.swift in Sources */,
 				E747C38C1D13833E0080EA8D /* Modelable.swift in Sources */,
+				E747C3B31D1395DB0080EA8D /* GravatarGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

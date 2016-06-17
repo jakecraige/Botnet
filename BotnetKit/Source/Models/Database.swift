@@ -107,7 +107,8 @@ public struct Database<Model: Modelable where Model.DecodedType == Model> {
           if snapshot.exists() {
             _ = convertSnapshot(snapshot).map(observer.onNext)
           } else {
-            print(NullRefError(ref))
+            observer.onError(NullRefError(ref))
+            observer.onCompleted()
           }
         },
         withCancelBlock: { observer.onError($0) }

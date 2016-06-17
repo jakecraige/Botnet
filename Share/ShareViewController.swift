@@ -1,5 +1,6 @@
-import UIKit
+import BotnetKit
 import Social
+import UIKit
 
 class ShareViewController: SLComposeServiceViewController {
   override func viewDidLoad() {
@@ -13,7 +14,12 @@ class ShareViewController: SLComposeServiceViewController {
   }
   
   override func didSelectPost() {
-    NSLog("Post thought: \(contentText)")
+    let thought = with(Thought.new()) {
+      $0.text = contentText
+      $0.userID = session.user?.id ?? "unknown"
+    }
+    Database.save(thought)
+    NSLog("Post thought: \(thought)")
     super.didSelectPost()
   }
 }

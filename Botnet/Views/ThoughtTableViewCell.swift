@@ -1,4 +1,5 @@
 import UIKit
+import BotnetKit
 import Haneke
 import Reusable
 import RxSwift
@@ -17,9 +18,10 @@ class ThoughtTableViewCell: UITableViewCell, Reusable {
     thoughtTextLabel.text = thought.text
 
     thought.user()
-      .subscribeNext { [weak self] user in
-        self?.updateUIForUser(user)
-      }.addDisposableTo(disposeBag)
+      .subscribe(
+        onNext: { [weak self] user in self?.updateUIForUser(user) },
+        onError: { [weak self] error in self?.updateUIForUser(.None) }
+      ).addDisposableTo(disposeBag)
   }
 
   override func prepareForReuse() {
@@ -28,9 +30,14 @@ class ThoughtTableViewCell: UITableViewCell, Reusable {
 }
 
 private extension ThoughtTableViewCell {
-  func updateUIForUser(user: User) {
-    let generator = GravatarGenerator(email: user.email)
-    profileImageView.hnk_setImageFromURL(generator.url)
-    nameLabel.text = user.name
+  func updateUIForUser(user: User?) {
+    if let user = user {
+      let generator = GravatarGenerator(email: user.email)
+      profileImageView.hnk_setImageFromURL(generator.url)
+      nameLabel.text = user.name
+    } else {
+      profileImageView.hnk_setImageFromURL(GravatarGenerator.blankImageURL)
+      nameLabel.text = "Unkown User"
+    }
   }
 }

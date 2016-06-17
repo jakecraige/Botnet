@@ -17,6 +17,10 @@ target "Botnet" do
   pod "Reusable"
 end
 
+target "ShareExtension" do
+  shared_pods
+end
+
 target "BotnetKit" do
   project "BotnetKit/BotnetKit"
   shared_pods

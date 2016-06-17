@@ -1,4 +1,5 @@
 import UIKit
+import BotnetKit
 import RxSwift
 
 final class ApplicationViewController: UIViewController {
@@ -11,7 +12,7 @@ final class ApplicationViewController: UIViewController {
     
     controller.initialSetup(UIApplication.sharedApplication())
 
-    if controller.isUserAuthenticated {
+    if session.isUserAuthenticated {
       displayHome()
     } else {
       displayAuthentication()
@@ -37,7 +38,7 @@ private extension ApplicationViewController {
 
   /// Watch for when a user signs out and present authentication when it happens
   func startMonitoringAuthState() {
-    let signedOut = controller.firUser.filter { $0 == .None }
+    let signedOut = session.firUser.filter { $0 == .None }
     signedOut
       .subscribeOn(MainScheduler.instance)
       .subscribeNext { [weak self] _ in self?.displayAuthentication() }

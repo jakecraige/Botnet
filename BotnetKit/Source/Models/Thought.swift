@@ -1,25 +1,25 @@
+
 import Curry
 import Argo
 import RxSwift
-import BotnetKit
 
-struct Thought: Modelable, Timestampable {
-  var id: String
-  var timestamps: Timestamps?
-  var userID: String
-  var text: String
+public struct Thought: Modelable, Timestampable {
+  public var id: String
+  public var timestamps: Timestamps?
+  public var userID: String
+  public var text: String
 
-  static func new() -> Thought {
+  public static func new() -> Thought {
     return .init(id: "", timestamps: .None, userID: "", text: "")
   }
 
-  func user() -> Observable<User> {
+  public func user() -> Observable<User> {
     return Database.observeObject(ref: User.getChildRef(userID))
   }
 }
 
 extension Thought: Decodable {
-  static func decode(json: JSON) -> Decoded<Thought> {
+  public static func decode(json: JSON) -> Decoded<Thought> {
     return curry(Thought.init)
       <^> json <| "id"
       <*> json <|? "timestamps"
@@ -29,7 +29,7 @@ extension Thought: Decodable {
 }
 
 extension Thought: Encodable {
-  func encode() -> [String: AnyObject] {
+  public func encode() -> [String: AnyObject] {
     return [
       "user_id": userID,
       "text": text,
