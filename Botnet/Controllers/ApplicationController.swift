@@ -1,5 +1,6 @@
+import UIKit
+import FirebaseWrapper
 import BotnetKit
-import Firebase
 import RxSwift
 
 final class ApplicationController {
@@ -7,7 +8,6 @@ final class ApplicationController {
 
   func initialSetup(application: UIApplication) {
     self.application = application
-    FIRApp.configure()
   }
 
   func user() -> Observable<User> {

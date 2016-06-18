@@ -1,5 +1,5 @@
-import Firebase
 import RxSwift
+import FirebaseWrapper
 
 extension FIRDataSnapshot {
   var asDictionary: [String: AnyObject] {

@@ -1,5 +1,5 @@
-import Firebase
 import RxSwift
+import FirebaseWrapper
 
 public final class Session {
   let disposeBag = DisposeBag()

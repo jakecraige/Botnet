@@ -1,6 +1,5 @@
 import BotnetKit
-import Firebase
-import FirebaseAuthUI
+import FirebaseWrapper
 import RxSwift
 
 final class AuthenticationViewController: UIViewController {

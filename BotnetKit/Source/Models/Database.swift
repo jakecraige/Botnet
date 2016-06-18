@@ -1,6 +1,6 @@
 import Argo
-import Firebase
 import RxSwift
+import FirebaseWrapper
 
 public enum SortOrder {
   /// Ascending - order a..z, 1..9

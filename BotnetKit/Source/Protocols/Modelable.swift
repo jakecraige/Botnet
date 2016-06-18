@@ -1,5 +1,5 @@
 import Argo
-import Firebase
+import FirebaseWrapper
 
 public protocol Modelable: Decodable, Encodable, Equatable {
   static var refName: String { get }
@@ -19,9 +19,6 @@ public extension Modelable {
   }
 
   static var ref: FIRDatabaseReference {
-    // Wow. Hacks. Seemingly race condition where this is called before configure *shurugs*
-    if FIRApp.defaultApp() == .None { FIRApp.configure() }
-
     return FIRDatabase.database().reference().child(refName)
   }
 

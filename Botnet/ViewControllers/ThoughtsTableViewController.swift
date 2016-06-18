@@ -1,5 +1,5 @@
 import UIKit
-import Firebase
+import FirebaseWrapper
 import RxSwift
 import RxCocoa
 

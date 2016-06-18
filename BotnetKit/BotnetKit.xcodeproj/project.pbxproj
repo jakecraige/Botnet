@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB21541D67D4B3EEADCEEC4C /* Pods_BotnetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0263F419105FA28C50C212 /* Pods_BotnetKit.framework */; };
+		6206A2EB99216904EA2C18CE /* Pods_BotnetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515E516C2CD83D470504B753 /* Pods_BotnetKit.framework */; };
 		E747C3691D1381EA0080EA8D /* BotnetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747C35E1D1381EA0080EA8D /* BotnetKit.framework */; };
 		E747C36E1D1381EA0080EA8D /* BotnetKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C36D1D1381EA0080EA8D /* BotnetKitTests.swift */; };
 		E747C3821D13832D0080EA8D /* CollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C37C1D13832D0080EA8D /* CollectionType.swift */; };
@@ -30,7 +30,9 @@
 		E747C3B11D1395790080EA8D /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C3B01D1395790080EA8D /* Thought.swift */; };
 		E747C3B31D1395DB0080EA8D /* GravatarGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C3B21D1395DB0080EA8D /* GravatarGenerator.swift */; };
 		E747C3B51D13960E0080EA8D /* Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747C3B41D13960E0080EA8D /* Crypto.framework */; };
-		E747C3BC1D1399580080EA8D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E747C3BB1D1399580080EA8D /* GoogleService-Info.plist */; };
+		E77809811D14E89400CC60F1 /* FirebaseWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77809801D14E89400CC60F1 /* FirebaseWrapper.framework */; };
+		E778098F1D15C73A00CC60F1 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E778098E1D15C73A00CC60F1 /* Environment.swift */; };
+		E77E4A4E1D14A77A006F57BC /* CreateUserFromFIRUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E4A4D1D14A77A006F57BC /* CreateUserFromFIRUserRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B6C4525B79EC40917263333 /* Pods-BotnetKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BotnetKit.release.xcconfig"; path = "../Pods/Target Support Files/Pods-BotnetKit/Pods-BotnetKit.release.xcconfig"; sourceTree = "<group>"; };
-		2DFD95CDC1B3F3583213648D /* Pods-BotnetKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BotnetKit.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-BotnetKit/Pods-BotnetKit.debug.xcconfig"; sourceTree = "<group>"; };
+		3FF0B8D4246635E145FAE7A5 /* Pods-BotnetKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BotnetKit.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-BotnetKit/Pods-BotnetKit.debug.xcconfig"; sourceTree = "<group>"; };
+		515E516C2CD83D470504B753 /* Pods_BotnetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BotnetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EBFDC618B8CC65A7FD26653 /* Pods-BotnetKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BotnetKit.release.xcconfig"; path = "../Pods/Target Support Files/Pods-BotnetKit/Pods-BotnetKit.release.xcconfig"; sourceTree = "<group>"; };
 		E747C35E1D1381EA0080EA8D /* BotnetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BotnetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E747C3681D1381EA0080EA8D /* BotnetKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BotnetKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E747C36D1D1381EA0080EA8D /* BotnetKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotnetKitTests.swift; sourceTree = "<group>"; };
@@ -71,8 +74,9 @@
 		E747C3B01D1395790080EA8D /* Thought.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
 		E747C3B21D1395DB0080EA8D /* GravatarGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravatarGenerator.swift; sourceTree = "<group>"; };
 		E747C3B41D13960E0080EA8D /* Crypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crypto.framework; path = ../Carthage/Build/iOS/Crypto.framework; sourceTree = "<group>"; };
-		E747C3BB1D1399580080EA8D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FA0263F419105FA28C50C212 /* Pods_BotnetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BotnetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E77809801D14E89400CC60F1 /* FirebaseWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E778098E1D15C73A00CC60F1 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		E77E4A4D1D14A77A006F57BC /* CreateUserFromFIRUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserFromFIRUserRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +84,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB21541D67D4B3EEADCEEC4C /* Pods_BotnetKit.framework in Frameworks */,
 				E747C3981D1386A10080EA8D /* Argo.framework in Frameworks */,
 				E747C3B51D13960E0080EA8D /* Crypto.framework in Frameworks */,
 				E747C3991D1386A10080EA8D /* Curry.framework in Frameworks */,
 				E747C39A1D1386A10080EA8D /* RxCocoa.framework in Frameworks */,
 				E747C39B1D1386A10080EA8D /* RxSwift.framework in Frameworks */,
+				E77809811D14E89400CC60F1 /* FirebaseWrapper.framework in Frameworks */,
+				6206A2EB99216904EA2C18CE /* Pods_BotnetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,23 +108,15 @@
 		1E8C4F8CC72D77B2EB3A67FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E77809801D14E89400CC60F1 /* FirebaseWrapper.framework */,
 				E747C3B41D13960E0080EA8D /* Crypto.framework */,
 				E747C3941D1386A10080EA8D /* Argo.framework */,
 				E747C3951D1386A10080EA8D /* Curry.framework */,
 				E747C3961D1386A10080EA8D /* RxCocoa.framework */,
 				E747C3971D1386A10080EA8D /* RxSwift.framework */,
-				FA0263F419105FA28C50C212 /* Pods_BotnetKit.framework */,
+				515E516C2CD83D470504B753 /* Pods_BotnetKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		44556B7C82CD36162F2B7F2D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2DFD95CDC1B3F3583213648D /* Pods-BotnetKit.debug.xcconfig */,
-				1B6C4525B79EC40917263333 /* Pods-BotnetKit.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		E747C3541D1381EA0080EA8D = {
@@ -128,8 +125,8 @@
 				E747C3601D1381EA0080EA8D /* Source */,
 				E747C36C1D1381EA0080EA8D /* UnitTests */,
 				E747C35F1D1381EA0080EA8D /* Products */,
-				44556B7C82CD36162F2B7F2D /* Pods */,
 				1E8C4F8CC72D77B2EB3A67FE /* Frameworks */,
+				FF7B0972760BBCE5A9CA142F /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +144,8 @@
 		E747C3601D1381EA0080EA8D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				E778098E1D15C73A00CC60F1 /* Environment.swift */,
+				E77E4A4C1D14A745006F57BC /* Networking */,
 				E747C3791D1382720080EA8D /* Extensions */,
 				E747C37A1D1382780080EA8D /* Protocols */,
 				E747C37B1D13827D0080EA8D /* Models */,
@@ -168,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				E747C3921D1383540080EA8D /* Info.plist */,
-				E747C3BB1D1399580080EA8D /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -209,6 +207,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E77E4A4C1D14A745006F57BC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E77E4A4D1D14A77A006F57BC /* CreateUserFromFIRUserRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FF7B0972760BBCE5A9CA142F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3FF0B8D4246635E145FAE7A5 /* Pods-BotnetKit.debug.xcconfig */,
+				8EBFDC618B8CC65A7FD26653 /* Pods-BotnetKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -226,12 +241,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E747C3721D1381EA0080EA8D /* Build configuration list for PBXNativeTarget "BotnetKit" */;
 			buildPhases = (
-				3C761CF20B03180111AB8ECC /* [CP] Check Pods Manifest.lock */,
+				05BAFF7CDC5DAD2B835DC03E /* [CP] Check Pods Manifest.lock */,
 				E747C35A1D1381EA0080EA8D /* Frameworks */,
 				E747C3591D1381EA0080EA8D /* Sources */,
 				E747C35B1D1381EA0080EA8D /* Headers */,
 				E747C35C1D1381EA0080EA8D /* Resources */,
-				C7C02D48F348ACBFB63E5FAA /* [CP] Copy Pods Resources */,
+				75FCA9BACBCC78BA8E622648 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -301,7 +316,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E747C3BC1D1399580080EA8D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +329,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3C761CF20B03180111AB8ECC /* [CP] Check Pods Manifest.lock */ = {
+		05BAFF7CDC5DAD2B835DC03E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -330,7 +344,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C7C02D48F348ACBFB63E5FAA /* [CP] Copy Pods Resources */ = {
+		75FCA9BACBCC78BA8E622648 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -353,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E747C3911D1383460080EA8D /* Timestamps.swift in Sources */,
+				E77E4A4E1D14A77A006F57BC /* CreateUserFromFIRUserRequest.swift in Sources */,
 				E747C3841D13832D0080EA8D /* Firebase.swift in Sources */,
 				E747C38D1D13833E0080EA8D /* Timestampable.swift in Sources */,
 				E747C38B1D13833E0080EA8D /* Encodable.swift in Sources */,
@@ -367,6 +382,7 @@
 				E747C3901D1383460080EA8D /* Database.swift in Sources */,
 				E747C38C1D13833E0080EA8D /* Modelable.swift in Sources */,
 				E747C3B31D1395DB0080EA8D /* GravatarGenerator.swift in Sources */,
+				E778098F1D15C73A00CC60F1 /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,13 +498,15 @@
 		};
 		E747C3731D1381EA0080EA8D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DFD95CDC1B3F3583213648D /* Pods-BotnetKit.debug.xcconfig */;
+			baseConfigurationReference = 3FF0B8D4246635E145FAE7A5 /* Pods-BotnetKit.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
@@ -516,13 +534,15 @@
 		};
 		E747C3741D1381EA0080EA8D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B6C4525B79EC40917263333 /* Pods-BotnetKit.release.xcconfig */;
+			baseConfigurationReference = 8EBFDC618B8CC65A7FD26653 /* Pods-BotnetKit.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",

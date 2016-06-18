@@ -4,26 +4,23 @@ platform :ios, "9.0"
 workspace "Botnet"
 use_frameworks!
 
-def shared_pods
+target "Botnet" do
+  pod "Reusable"
+end
+
+target "ShareExtension"
+
+target "BotnetKit" do
+  project "BotnetKit/BotnetKit"
+end
+
+target "FirebaseWrapper" do
+  project "FirebaseWrapper/FirebaseWrapper"
   pod "Firebase"
   pod "Firebase/Auth"
   pod "Firebase/Crash"
   pod "Firebase/Database"
   pod "FirebaseUI/AuthBase"
-end
-
-target "Botnet" do
-  shared_pods
-  pod "Reusable"
-end
-
-target "ShareExtension" do
-  shared_pods
-end
-
-target "BotnetKit" do
-  project "BotnetKit/BotnetKit"
-  shared_pods
 end
 
 post_install do |installer|
