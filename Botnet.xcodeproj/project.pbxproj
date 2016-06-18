@@ -319,7 +319,7 @@
 			path = UnitTests;
 			sourceTree = "<group>";
 		};
-		7D9FA2B9EF8820F27957AECB /* Botnet */ = {
+		7D9FA2B9EF8820F27957AECB /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				E7E466A71D10C3E70059D2A4 /* ViewControllers */,
@@ -331,7 +331,7 @@
 				94D5B650D86B489AE0603C2B /* Views */,
 				09D30123AD76B6304BB9AC0C /* Resources */,
 			);
-			path = Botnet;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		94D5B650D86B489AE0603C2B /* Views */ = {
@@ -409,7 +409,7 @@
 		C9D755AB3F9571FC787AA4B5 = {
 			isa = PBXGroup;
 			children = (
-				7D9FA2B9EF8820F27957AECB /* Botnet */,
+				7D9FA2B9EF8820F27957AECB /* Source */,
 				E747C2C11D136BB30080EA8D /* ShareExtension */,
 				E778099F1D15D4A100CC60F1 /* TodayExtension */,
 				74D5036886D499F01B3DF042 /* UnitTests */,
@@ -851,7 +851,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Replace this path with the path to the key you just downloaded\nJSON_FILE=Botnet/Resources/Other-Sources/Botnet-a3355c871b4d.json\nSERVICE_PLIST=BotnetKit/Resources/GoogleService-Info.plist\n\n# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:603646813539:ios:d521b53b120c0fcc\n\ndefaults write com.google.SymbolUpload version -integer 1   # creates file if it does not exist\nJSON=$(cat \"${JSON_FILE}\")\n/usr/bin/plutil -replace \"app_${GOOGLE_APP_ID//:/_}\" -json \"${JSON}\" \"$HOME/Library/Preferences/com.google.SymbolUpload.plist\"\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym";
+			shellScript = "# Replace this path with the path to the key you just downloaded\nJSON_FILE=Source/Resources/Other-Sources/Botnet-a3355c871b4d.json\nSERVICE_PLIST=BotnetKit/Resources/GoogleService-Info.plist\n\n# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:603646813539:ios:d521b53b120c0fcc\n\ndefaults write com.google.SymbolUpload version -integer 1   # creates file if it does not exist\nJSON=$(cat \"${JSON_FILE}\")\n/usr/bin/plutil -replace \"app_${GOOGLE_APP_ID//:/_}\" -json \"${JSON}\" \"$HOME/Library/Preferences/com.google.SymbolUpload.plist\"\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym";
 		};
 		F0B5724E9F7484FDB9DE47E6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -983,7 +983,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Pods/**",
 				);
-				INFOPLIST_FILE = "Botnet/Resources/Other-Sources/Info.plist";
+				INFOPLIST_FILE = "Source/Resources/Other-Sources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.${PRODUCT_NAME:rfc1034identifier}";
@@ -1055,7 +1055,7 @@
 					"$(PROJECT_DIR)/Pods/**",
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "Botnet/Resources/Other-Sources/Info.plist";
+				INFOPLIST_FILE = "Source/Resources/Other-Sources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.${PRODUCT_NAME:rfc1034identifier}";
@@ -1137,7 +1137,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = Share/Info.plist;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1165,7 +1165,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = Share/Info.plist;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
