@@ -444,8 +444,7 @@
 				E747C2C41D136BB30080EA8D /* MainInterface.storyboard */,
 				E747C2C71D136BB30080EA8D /* Info.plist */,
 			);
-			name = ShareExtension;
-			path = Share;
+			path = ShareExtension;
 			sourceTree = "<group>";
 		};
 		E778099F1D15D4A100CC60F1 /* TodayExtension */ = {
