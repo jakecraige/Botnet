@@ -26,7 +26,7 @@ public final class Session {
   public var user: User?
 
   init() {
-    FIRApp.configure()
+    FIRApp.configureWithOptions(Environment.current.firOptions)
   }
 }
 
