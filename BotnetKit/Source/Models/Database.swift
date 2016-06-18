@@ -2,19 +2,6 @@ import Argo
 import RxSwift
 import FirebaseWrapper
 
-public enum SortOrder {
-  /// Ascending - order a..z, 1..9
-  case asc
-  /// Descending order z..a, 9..1
-  case desc
-}
-
-public enum QueryLimit {
-  case first(UInt)
-  case last(UInt)
-  case none
-}
-
 /// Returned when a reference you try to subscribe to doesn't exist
 public struct NullRefError: ErrorType {
   let message: String
@@ -87,24 +74,12 @@ public struct Database<Model: Modelable where Model.DecodedType == Model> {
     }
   }
 
-  public static func observeArray(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref, orderBy: String? = .None, sort: SortOrder = .asc, limit: QueryLimit = .none) -> Observable<[Model]> {
-    var query = ref
+  public static func observeArray(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref, options: QueryOptions = QueryOptions.empty) -> Observable<[Model]> {
+    let query = options.generate(forQuery: ref)
     return Observable.create { observer in
-      if let orderBy = orderBy {
-        query = ref.queryOrderedByChild(orderBy)
-      }
-
-      switch limit {
-      case let .first(num):
-        query = query.queryLimitedToFirst(num)
-      case let .last(num):
-        query = query.queryLimitedToLast(num)
-      case .none: break
-      }
-
       let observerHandle = query.observeEventType(
         eventType,
-        withBlock: { observer.onNext(convertSnapshot($0, sort: sort)) },
+        withBlock: { observer.onNext(convertSnapshot($0, sort: options.sort)) },
         withCancelBlock: { observer.onError($0) }
       )
       return AnonymousDisposable {
@@ -130,39 +105,6 @@ public struct Database<Model: Modelable where Model.DecodedType == Model> {
       return AnonymousDisposable {
         ref.removeObserverWithHandle(observerHandle)
       }
-    }
-  }
-
-  public static func observeArrayOnce(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref, orderBy: String? = .None, sort: SortOrder = .asc) -> Observable<[Model]> {
-    var query = ref
-    return Observable.create { observer in
-      if let orderBy = orderBy {
-        query = ref.queryOrderedByChild(orderBy)
-      }
-
-      query.observeSingleEventOfType(
-        eventType,
-        withBlock: { observer.onNext(convertSnapshot($0, sort: sort)) },
-        withCancelBlock: { observer.onError($0) }
-      )
-      return NopDisposable.instance
-    }
-  }
-
-  public static func observeObjectOnce(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref) -> Observable<Model> {
-    return Observable.create { observer in
-      ref.observeSingleEventOfType(
-        eventType,
-        withBlock: { snapshot in
-          if snapshot.exists() {
-            _ = convertSnapshot(snapshot).map(observer.onNext)
-          } else {
-            print(NullRefError(ref))
-          }
-        },
-        withCancelBlock: { observer.onError($0) }
-      )
-      return NopDisposable.instance
     }
   }
 }

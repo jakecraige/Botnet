@@ -34,6 +34,7 @@
 		E778098F1D15C73A00CC60F1 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E778098E1D15C73A00CC60F1 /* Environment.swift */; };
 		E77809951D15CE6500CC60F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E77809941D15CE6500CC60F1 /* GoogleService-Info.plist */; };
 		E77809971D15D1FA00CC60F1 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809961D15D1FA00CC60F1 /* Bundle.swift */; };
+		E77809BA1D15F82700CC60F1 /* QueryOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809B91D15F82700CC60F1 /* QueryOptions.swift */; };
 		E77E4A4E1D14A77A006F57BC /* CreateUserFromFIRUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E4A4D1D14A77A006F57BC /* CreateUserFromFIRUserRequest.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		E778098E1D15C73A00CC60F1 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		E77809941D15CE6500CC60F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E77809961D15D1FA00CC60F1 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		E77809B91D15F82700CC60F1 /* QueryOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryOptions.swift; sourceTree = "<group>"; };
 		E77E4A4D1D14A77A006F57BC /* CreateUserFromFIRUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserFromFIRUserRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,6 +211,7 @@
 				E747C3B01D1395790080EA8D /* Thought.swift */,
 				E747C3B21D1395DB0080EA8D /* GravatarGenerator.swift */,
 				E77809961D15D1FA00CC60F1 /* Bundle.swift */,
+				E77809B91D15F82700CC60F1 /* QueryOptions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				E747C3871D13832D0080EA8D /* Swift.swift in Sources */,
 				E747C3B11D1395790080EA8D /* Thought.swift in Sources */,
 				E77809971D15D1FA00CC60F1 /* Bundle.swift in Sources */,
+				E77809BA1D15F82700CC60F1 /* QueryOptions.swift in Sources */,
 				E747C3821D13832D0080EA8D /* CollectionType.swift in Sources */,
 				E747C3851D13832D0080EA8D /* NSDate.swift in Sources */,
 				E747C3AF1D1395740080EA8D /* Session.swift in Sources */,

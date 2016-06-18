@@ -35,7 +35,8 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
   }
 
   func observeThoughts() {
-    Database<Thought>.observeArray(orderBy: "createdAt", sort: .desc, limit: .last(3))
+    let options = QueryOptions(orderBy: "createdAt", sort: .desc, limit: .last(3))
+    Database<Thought>.observeArray(options: options)
       .startWith([])
       .subscribe(
         onNext: { thoughts in
