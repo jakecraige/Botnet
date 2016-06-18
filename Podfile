@@ -9,6 +9,7 @@ target "Botnet" do
 end
 
 target "ShareExtension"
+target "TodayExtension"
 
 target "BotnetKit" do
   project "BotnetKit/BotnetKit"

@@ -5,6 +5,7 @@ import UIKit
 class ShareViewController: SLComposeServiceViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
+    session.configure()
     title = "Botnet"
     placeholder = "Compose your thought..."
   }

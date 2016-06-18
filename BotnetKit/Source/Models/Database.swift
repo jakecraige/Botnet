@@ -9,6 +9,12 @@ public enum SortOrder {
   case desc
 }
 
+public enum QueryLimit {
+  case first(UInt)
+  case last(UInt)
+  case none
+}
+
 /// Returned when a reference you try to subscribe to doesn't exist
 public struct NullRefError: ErrorType {
   let message: String
@@ -81,11 +87,19 @@ public struct Database<Model: Modelable where Model.DecodedType == Model> {
     }
   }
 
-  public static func observeArray(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref, orderBy: String? = .None, sort: SortOrder = .asc) -> Observable<[Model]> {
+  public static func observeArray(eventType eventType: FIRDataEventType = .Value, ref: FIRDatabaseQuery = Model.ref, orderBy: String? = .None, sort: SortOrder = .asc, limit: QueryLimit = .none) -> Observable<[Model]> {
     var query = ref
     return Observable.create { observer in
       if let orderBy = orderBy {
         query = ref.queryOrderedByChild(orderBy)
+      }
+
+      switch limit {
+      case let .first(num):
+        query = query.queryLimitedToFirst(num)
+      case let .last(num):
+        query = query.queryLimitedToLast(num)
+      case .none: break
       }
 
       let observerHandle = query.observeEventType(

@@ -8,6 +8,7 @@ final class ApplicationController {
 
   func initialSetup(application: UIApplication) {
     self.application = application
+    session.configure()
   }
 
   func user() -> Observable<User> {
