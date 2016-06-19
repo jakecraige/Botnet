@@ -1,11 +1,11 @@
 import UIKit
 import BotnetKit
-import Haneke
+import Kingfisher
 import Reusable
 import RxSwift
 import RxCocoa
 
-class ThoughtTableViewCell: UITableViewCell, Reusable {
+final class ThoughtTableViewCell: UITableViewCell, Reusable {
   static let estimatedHeight: CGFloat = 72
 
   var disposeBag = DisposeBag()
@@ -31,12 +31,13 @@ class ThoughtTableViewCell: UITableViewCell, Reusable {
 
 private extension ThoughtTableViewCell {
   func updateUIForUser(user: User?) {
+    profileImageView.kf_cancelDownloadTask()
     if let user = user {
       let generator = GravatarGenerator(email: user.email)
-      profileImageView.hnk_setImageFromURL(generator.url)
+      profileImageView.kf_setImageWithURL(generator.url)
       nameLabel.text = user.name
     } else {
-      profileImageView.hnk_setImageFromURL(GravatarGenerator.blankImageURL)
+      profileImageView.kf_setImageWithURL(GravatarGenerator.blankImageURL)
       nameLabel.text = "Unkown User"
     }
   }

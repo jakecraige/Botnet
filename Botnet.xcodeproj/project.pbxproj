@@ -18,7 +18,6 @@
 		DE53CD4715BFF97DB980830A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 906CDFA9196E62B5FFEBC50A /* Settings.bundle */; };
 		E747C29D1D11C7F20080EA8D /* ThoughtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C29C1D11C7F20080EA8D /* ThoughtTableViewCell.swift */; };
 		E747C2A11D11C9280080EA8D /* ThoughtsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2A01D11C9280080EA8D /* ThoughtsTableViewController.swift */; };
-		E747C2A51D11CECB0080EA8D /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747C2A41D11CECB0080EA8D /* Haneke.framework */; };
 		E747C2A91D11D4380080EA8D /* Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747C2A81D11D4380080EA8D /* Crypto.framework */; };
 		E747C2AD1D11DA8E0080EA8D /* ThoughtsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2AC1D11DA8E0080EA8D /* ThoughtsController.swift */; };
 		E747C2B11D1214070080EA8D /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747C2B01D1214070080EA8D /* ComposeViewController.swift */; };
@@ -47,6 +46,11 @@
 		E77809B51D15F68700CC60F1 /* FirebaseWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E77809821D14E8A700CC60F1 /* FirebaseWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E77809B71D15F6A900CC60F1 /* FirebaseWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E77809821D14E8A700CC60F1 /* FirebaseWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E77809B81D15F6AB00CC60F1 /* BotnetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E747C3A41D138DA10080EA8D /* BotnetKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E77809BC1D16E20A00CC60F1 /* ThoughtTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809BB1D16E20A00CC60F1 /* ThoughtTableViewController.swift */; };
+		E77809BE1D16E2FA00CC60F1 /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809BD1D16E2FA00CC60F1 /* SegueIdentifier.swift */; };
+		E77809C01D16E68A00CC60F1 /* ThoughtDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809BF1D16E68A00CC60F1 /* ThoughtDetailTableViewCell.swift */; };
+		E77809C21D16E96200CC60F1 /* CreatedAtLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809C11D16E96200CC60F1 /* CreatedAtLabel.swift */; };
+		E77809C41D16EE8100CC60F1 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77809C31D16EE8100CC60F1 /* Kingfisher.framework */; };
 		E77E4A501D14A7FD006F57BC /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E4A4F1D14A7FD006F57BC /* AuthenticationController.swift */; };
 		E7E466A41D10C3570059D2A4 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */; };
 		E7E466A91D10C4A60059D2A4 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466A81D10C4A60059D2A4 /* UIStoryboard.swift */; };
@@ -175,6 +179,11 @@
 		E77809A31D15D4A100CC60F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E77809A51D15D4A100CC60F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E77809AF1D15E59000CC60F1 /* ThoughtTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThoughtTableViewCell.swift; sourceTree = "<group>"; };
+		E77809BB1D16E20A00CC60F1 /* ThoughtTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThoughtTableViewController.swift; sourceTree = "<group>"; };
+		E77809BD1D16E2FA00CC60F1 /* SegueIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueIdentifier.swift; sourceTree = "<group>"; };
+		E77809BF1D16E68A00CC60F1 /* ThoughtDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThoughtDetailTableViewCell.swift; sourceTree = "<group>"; };
+		E77809C11D16E96200CC60F1 /* CreatedAtLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatedAtLabel.swift; sourceTree = "<group>"; };
+		E77809C31D16EE8100CC60F1 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		E77E4A4F1D14A7FD006F57BC /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
 		E7E466A81D10C4A60059D2A4 /* UIStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
@@ -209,7 +218,7 @@
 				E747C3A81D138DF10080EA8D /* BotnetKit.framework in Frameworks */,
 				E747C2A91D11D4380080EA8D /* Crypto.framework in Frameworks */,
 				E7E466C71D11B6310059D2A4 /* Curry.framework in Frameworks */,
-				E747C2A51D11CECB0080EA8D /* Haneke.framework in Frameworks */,
+				E77809C41D16EE8100CC60F1 /* Kingfisher.framework in Frameworks */,
 				E7E466CB1D11B7590059D2A4 /* RxCocoa.framework in Frameworks */,
 				E7E466C91D11B7370059D2A4 /* RxSwift.framework in Frameworks */,
 				E747C2B71D13407A0080EA8D /* SuperDelegate.framework in Frameworks */,
@@ -246,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				E747C2BA1D13613B0080EA8D /* ShortcutIdentifier.swift */,
+				E77809BD1D16E2FA00CC60F1 /* SegueIdentifier.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -338,6 +348,8 @@
 			isa = PBXGroup;
 			children = (
 				E747C29C1D11C7F20080EA8D /* ThoughtTableViewCell.swift */,
+				E77809BF1D16E68A00CC60F1 /* ThoughtDetailTableViewCell.swift */,
+				E77809C11D16E96200CC60F1 /* CreatedAtLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -360,6 +372,7 @@
 		B306BDBBF6B3F3D9B9EE9E9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E77809C31D16EE8100CC60F1 /* Kingfisher.framework */,
 				E77809821D14E8A700CC60F1 /* FirebaseWrapper.framework */,
 				E747C3A41D138DA10080EA8D /* BotnetKit.framework */,
 				E747C2B61D13407A0080EA8D /* SuperDelegate.framework */,
@@ -465,6 +478,7 @@
 				E7E466B61D10CE090059D2A4 /* AuthenticationViewController.swift */,
 				E747C2A01D11C9280080EA8D /* ThoughtsTableViewController.swift */,
 				E747C2B01D1214070080EA8D /* ComposeViewController.swift */,
+				E77809BB1D16E20A00CC60F1 /* ThoughtTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -768,9 +782,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Crypto.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SuperDelegate.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			name = "Copy frameworks (Carthage)";
 			outputPaths = (
@@ -894,14 +908,18 @@
 				3025C5017E38755ED543C19F /* AppDelegate.swift in Sources */,
 				E747C3BA1D1398700080EA8D /* ApplicationController.swift in Sources */,
 				E747C29D1D11C7F20080EA8D /* ThoughtTableViewCell.swift in Sources */,
+				E77809BC1D16E20A00CC60F1 /* ThoughtTableViewController.swift in Sources */,
+				E77809C21D16E96200CC60F1 /* CreatedAtLabel.swift in Sources */,
 				E7E466B71D10CE090059D2A4 /* AuthenticationViewController.swift in Sources */,
 				E7E466A91D10C4A60059D2A4 /* UIStoryboard.swift in Sources */,
 				E747C2B91D1349140080EA8D /* UIViewController.swift in Sources */,
+				E77809C01D16E68A00CC60F1 /* ThoughtDetailTableViewCell.swift in Sources */,
 				E77E4A501D14A7FD006F57BC /* AuthenticationController.swift in Sources */,
 				E747C2BB1D13613B0080EA8D /* ShortcutIdentifier.swift in Sources */,
 				E747C2A11D11C9280080EA8D /* ThoughtsTableViewController.swift in Sources */,
 				E747C2B11D1214070080EA8D /* ComposeViewController.swift in Sources */,
 				E747C3001D1378570080EA8D /* UITableView.swift in Sources */,
+				E77809BE1D16E2FA00CC60F1 /* SegueIdentifier.swift in Sources */,
 				E7E466A41D10C3570059D2A4 /* ApplicationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,4 +12,8 @@ final class ThoughtsController {
       .bindTo(self.thoughts)
       .addDisposableTo(disposeBag)
   }
+
+  func thought(forIndexPath indexPath: NSIndexPath) -> Thought {
+    return thoughts.value[indexPath.row]
+  }
 }

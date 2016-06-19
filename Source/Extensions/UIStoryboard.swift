@@ -6,10 +6,6 @@ enum Storyboard: String {
   case Main
 }
 
-enum Segue: String {
-  case composeThought
-}
-
 extension UIStoryboard {
   static func initialViewController<VCType: UIViewController>(storyboard: Storyboard) -> VCType {
     return UIStoryboard(name: storyboard.rawValue, bundle: .None).instantiateInitialViewController() as! VCType

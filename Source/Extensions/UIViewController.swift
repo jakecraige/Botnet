@@ -1,7 +1,7 @@
 import UIKit
 
 extension UIViewController {
-  func performSegue(segue: Segue, sender: AnyObject? = .None) {
+  func performSegue(segue: SegueIdentifier, sender: AnyObject? = .None) {
     performSegueWithIdentifier(segue.rawValue, sender: sender)
   }
 }

@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -80,6 +81,10 @@
                                     <outlet property="nameLabel" destination="f84-gh-CPu" id="6vT-4b-Q6q"/>
                                     <outlet property="profileImageView" destination="Vfr-b2-fVs" id="jKa-a5-qbj"/>
                                     <outlet property="thoughtTextLabel" destination="yma-PC-pjk" id="pBb-3Z-1iS"/>
+                                    <segue destination="wV1-p7-9sV" kind="show" identifier="showThought" id="D5r-rR-NEw">
+                                        <segue key="commit" inheritsFrom="parent" id="X31-Hg-P5t"/>
+                                        <segue key="preview" inheritsFrom="commit" id="E3t-Ob-tpM"/>
+                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -105,6 +110,89 @@
                 <exit id="Rxt-JF-8Hy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1197" y="388"/>
+        </scene>
+        <!--thought-->
+        <scene sceneID="T6O-uI-Gq3">
+            <objects>
+                <tableViewController id="wV1-p7-9sV" customClass="ThoughtTableViewController" customModule="Botnet" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="148" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uzd-09-ZdZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ThoughtDetailTableViewCell" rowHeight="148" id="wLr-Gk-htA" customClass="ThoughtDetailTableViewCell" customModule="Botnet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="148"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wLr-Gk-htA" id="o86-f9-yNk">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="148"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lLz-v8-o4v">
+                                            <rect key="frame" x="8" y="8" width="584" height="132"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ac7-OZ-Ime">
+                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="50"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F04-5c-ss2">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="Sql-5w-uNT"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Jordan Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8Z-Nr-nvs">
+                                                            <rect key="frame" x="55" y="0.0" width="89" height="50"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="V08-OU-2OZ"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="This is a very interesting thought. Full of deep thinking that makes you think about the world differently." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJN-TO-t6t">
+                                                    <rect key="frame" x="0.0" y="55" width="584" height="41"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="6/18/16, 7:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6w-OX-1So" customClass="CreatedAtLabel" customModule="Botnet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="101" width="89" height="32"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="NJN-TO-t6t" secondAttribute="trailing" id="VGb-Iz-mgM"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="leadingMargin" secondItem="lLz-v8-o4v" secondAttribute="leading" id="Cdq-ei-PiA"/>
+                                        <constraint firstAttribute="topMargin" secondItem="lLz-v8-o4v" secondAttribute="top" id="OFV-5i-Zic"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="lLz-v8-o4v" secondAttribute="bottom" id="lAI-KX-Iv8"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="lLz-v8-o4v" secondAttribute="trailing" id="yRg-qb-105"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="authorImageView" destination="F04-5c-ss2" id="RDr-kb-u4f"/>
+                                    <outlet property="authorNameLabel" destination="f8Z-Nr-nvs" id="tDv-1h-kd9"/>
+                                    <outlet property="thoughtCreatedAtLabel" destination="g6w-OX-1So" id="6Jz-Sc-Ccr"/>
+                                    <outlet property="thoughtTextLabel" destination="NJN-TO-t6t" id="NRB-q1-fam"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wV1-p7-9sV" id="CNI-Id-NbC"/>
+                            <outlet property="delegate" destination="wV1-p7-9sV" id="RMi-Nk-EVh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="thought" id="6So-XP-C4U"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tTN-aH-Sqa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1990" y="412"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g7D-bM-B3a">
@@ -174,4 +262,7 @@
             <point key="canvasLocation" x="2600" y="-308"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="D5r-rR-NEw"/>
+    </inferredMetricsTieBreakers>
 </document>

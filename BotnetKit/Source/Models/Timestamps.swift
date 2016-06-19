@@ -2,8 +2,8 @@ import Argo
 import Curry
 
 public struct Timestamps {
-  let createdAt: NSDate
-  let updatedAt: NSDate
+  public let createdAt: NSDate
+  public let updatedAt: NSDate
 }
 
 extension Timestamps: Decodable {

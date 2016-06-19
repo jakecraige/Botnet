@@ -17,6 +17,18 @@ final class ThoughtsTableViewController: UITableViewController {
       .addDisposableTo(disposeBag)
   }
 
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    guard let identifier = SegueIdentifier(rawValue: segue.identifier ?? ""),
+          let indexPath = tableView.indexPathForSelectedRow else { return }
+
+    switch identifier {
+    case .showThought:
+      let vc = segue.destinationViewController as! ThoughtTableViewController
+      vc.thought = controller.thought(forIndexPath: indexPath)
+    default: break
+    }
+  }
+
   @IBAction func unwindToThoughts(segue: UIStoryboardSegue) {}
 
   @IBAction func signOutTapped(sender: UIBarButtonItem) {
@@ -31,10 +43,6 @@ final class ThoughtsTableViewController: UITableViewController {
 
 // MARK: UITableViewDelegate
 extension ThoughtsTableViewController {
-  override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    return false
-  }
-
   override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     return ThoughtTableViewCell.estimatedHeight
   }
