@@ -9,6 +9,13 @@ public struct Thought: Modelable, Timestampable {
   public var userID: String
   public var text: String
 
+  public var asActivity: NSUserActivity {
+    return with(NSUserActivity(activityType: "com.thoughtbot.Botnet.activity-thought")) {
+      $0.title = text
+      $0.userInfo = ["id": id]
+    }
+  }
+
   public static func new() -> Thought {
     return .init(id: "", timestamps: .None, userID: "", text: "")
   }

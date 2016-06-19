@@ -39,7 +39,7 @@ private extension ThoughtDetailTableViewCell {
       authorImageView.kf_setImageWithURL(generator.url)
       authorNameLabel.text = user.name
     } else {
-      authorImageView.kf_setImageWithURL(GravatarGenerator.blankImageURL)
+      authorImageView.kf_setImageWithURL(GravatarGenerator.blankImageURL(size: 50))
       authorNameLabel.text = "Unkown User"
     }
   }

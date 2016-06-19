@@ -5,6 +5,7 @@ import RxCocoa
 
 final class ThoughtTableViewController: UITableViewController {
   var thought: Thought!
+  var thoughtActivity: NSUserActivity?
 
   let disposeBag = DisposeBag()
 
@@ -16,5 +17,8 @@ final class ThoughtTableViewController: UITableViewController {
         cell.configure(thought)
       }
       .addDisposableTo(disposeBag)
+
+    thoughtActivity = ActivityIdentifier.activity(for: thought)
+    thoughtActivity?.becomeCurrent()
   }
 }

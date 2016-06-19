@@ -3,22 +3,20 @@ import UIKit
 import Crypto
 
 public struct GravatarGenerator {
-  static let defaultSize: Float = 30 * Float(UIScreen.mainScreen().scale)
-
-  public static var blankImageURL: NSURL {
-    return generateURL("not-an-md5-hash", size: defaultSize)
-  }
-
   public let email: String
   public let size: Float
 
-  public init(email: String, size: Float = GravatarGenerator.defaultSize) {
+  public init(email: String, size: Float) {
     self.email = email
-    self.size = size
+    self.size = size * Float(UIScreen.mainScreen().scale)
   }
 
   public var url: NSURL { return generateURL(emailHash, size: size) }
   private var emailHash: String { return email.MD5! }
+
+  public static func blankImageURL(size size: Float) -> NSURL {
+    return generateURL("not-an-md5-hash", size: size)
+  }
 }
 
 private func generateURL(hash: String, size: Float) -> NSURL {

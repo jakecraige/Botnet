@@ -33,11 +33,11 @@ private extension ThoughtTableViewCell {
   func updateUIForUser(user: User?) {
     profileImageView.kf_cancelDownloadTask()
     if let user = user {
-      let generator = GravatarGenerator(email: user.email)
+      let generator = GravatarGenerator(email: user.email, size: 30)
       profileImageView.kf_setImageWithURL(generator.url)
       nameLabel.text = user.name
     } else {
-      profileImageView.kf_setImageWithURL(GravatarGenerator.blankImageURL)
+      profileImageView.kf_setImageWithURL(GravatarGenerator.blankImageURL(size: 30))
       nameLabel.text = "Unkown User"
     }
   }

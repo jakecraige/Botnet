@@ -1,4 +1,5 @@
 import UIKit
+import BotnetKit
 import FirebaseWrapper
 import RxSwift
 import RxCocoa
@@ -17,14 +18,26 @@ final class ThoughtsTableViewController: UITableViewController {
       .addDisposableTo(disposeBag)
   }
 
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    tableView.deselectAllRows(animated) // You know, UIKit bugs where it doesn't deselect rows.
+  }
+
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    guard let identifier = SegueIdentifier(rawValue: segue.identifier ?? ""),
-          let indexPath = tableView.indexPathForSelectedRow else { return }
+    guard let identifier = SegueIdentifier(rawValue: segue.identifier ?? "") else { return }
 
     switch identifier {
     case .showThought:
+      let thought: Thought
+      if let wrappedModel = sender as? ModelWrapper<Thought> {
+        thought = wrappedModel.model
+      } else {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        thought = controller.thought(forIndexPath: indexPath)
+      }
+
       let vc = segue.destinationViewController as! ThoughtTableViewController
-      vc.thought = controller.thought(forIndexPath: indexPath)
+      vc.thought = thought
     default: break
     }
   }

@@ -18,11 +18,6 @@ class AppDelegate: SuperDelegate, ApplicationLaunched {
 
   func loadInterfaceWithLaunchItem(launchItem: LaunchItem) {
     setupMainWindow(window)
-
-    switch launchItem {
-    case let .ShortcutItem(shortcutItem): handleShortcutItem(shortcutItem, completionHandler: {})
-    default: break
-    }
   }
 }
 
@@ -35,5 +30,17 @@ extension AppDelegate: ShortcutCapable {
     guard let type = ShortcutIdentifier(fullType: shortcutItem.type) else { return completionHandler() }
     applicationVC.handleShortcutItem(type)
     completionHandler()
+  }
+}
+
+extension AppDelegate: UserActivityCapable {
+  func canHandleUserActivity(userActivity: NSUserActivity) -> Bool {
+    return ActivityIdentifier(fullType: userActivity.activityType) != .None
+  }
+
+  func continueUserActivity(userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+    guard let type = ActivityIdentifier(fullType: userActivity.activityType) else { return false }
+    applicationVC.handleUserActivity(type, activity: userActivity)
+    return true
   }
 }

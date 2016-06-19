@@ -24,6 +24,16 @@ final class ApplicationViewController: UIViewController {
     case .composeThought: composeThought()
     }
   }
+
+  func handleUserActivity(type: ActivityIdentifier, activity: NSUserActivity) {
+    switch type {
+    case .thought:
+      guard let id = activity.userInfo?["id"] as? String else {
+        fatalError("Expected to find model id in user info but was not there.")
+      }
+      viewThought(id)
+    }
+  }
 }
 
 private extension ApplicationViewController {
@@ -34,6 +44,21 @@ private extension ApplicationViewController {
       return
     }
     vc.performSegue(.composeThought)
+  }
+
+  func viewThought(id: String) {
+    guard let navVC = activeViewController as? UINavigationController,
+          let vc = navVC.topViewController as? ThoughtsTableViewController else {
+      NSLog("Attempted to view thought but not viewing the ThoughtsTableViewController")
+      return
+    }
+
+    Database<Thought>.observeObject(ref: Thought.getChildRef(id))
+      .take(1)
+      .subscribeNext { thought in
+        vc.performSegue(.showThought, sender: ModelWrapper(thought))
+      }
+      .addDisposableTo(disposeBag)
   }
 
   /// Watch for when a user signs out and present authentication when it happens

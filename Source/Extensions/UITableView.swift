@@ -12,4 +12,10 @@ extension UITableView {
     -> Disposable {
       return rx_itemsWithCellIdentifier(cellType.reuseIdentifier)
   }
+
+  func deselectAllRows(animated: Bool) {
+    indexPathsForSelectedRows?.forEach { indexPath in
+      deselectRowAtIndexPath(indexPath, animated: animated)
+    }
+  }
 }
