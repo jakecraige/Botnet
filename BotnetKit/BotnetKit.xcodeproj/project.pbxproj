@@ -36,6 +36,9 @@
 		E77809971D15D1FA00CC60F1 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809961D15D1FA00CC60F1 /* Bundle.swift */; };
 		E77809BA1D15F82700CC60F1 /* QueryOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809B91D15F82700CC60F1 /* QueryOptions.swift */; };
 		E77809C81D16F99400CC60F1 /* ModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809C71D16F99400CC60F1 /* ModelWrapper.swift */; };
+		E77809CE1D171A9100CC60F1 /* UploadImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809CD1D171A9100CC60F1 /* UploadImageRequest.swift */; };
+		E77809D61D173EBF00CC60F1 /* DeleteImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809D51D173EBF00CC60F1 /* DeleteImageRequest.swift */; };
+		E77809D81D174A1C00CC60F1 /* Argo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809D71D174A1C00CC60F1 /* Argo.swift */; };
 		E77E4A4E1D14A77A006F57BC /* CreateUserFromFIRUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E4A4D1D14A77A006F57BC /* CreateUserFromFIRUserRequest.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +87,9 @@
 		E77809961D15D1FA00CC60F1 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		E77809B91D15F82700CC60F1 /* QueryOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryOptions.swift; sourceTree = "<group>"; };
 		E77809C71D16F99400CC60F1 /* ModelWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelWrapper.swift; sourceTree = "<group>"; };
+		E77809CD1D171A9100CC60F1 /* UploadImageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageRequest.swift; sourceTree = "<group>"; };
+		E77809D51D173EBF00CC60F1 /* DeleteImageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteImageRequest.swift; sourceTree = "<group>"; };
+		E77809D71D174A1C00CC60F1 /* Argo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Argo.swift; sourceTree = "<group>"; };
 		E77E4A4D1D14A77A006F57BC /* CreateUserFromFIRUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserFromFIRUserRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +195,7 @@
 				E747C37F1D13832D0080EA8D /* NSDate.swift */,
 				E747C3801D13832D0080EA8D /* NSError.swift */,
 				E747C3811D13832D0080EA8D /* Swift.swift */,
+				E77809D71D174A1C00CC60F1 /* Argo.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -223,6 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				E77E4A4D1D14A77A006F57BC /* CreateUserFromFIRUserRequest.swift */,
+				E77809CD1D171A9100CC60F1 /* UploadImageRequest.swift */,
+				E77809D51D173EBF00CC60F1 /* DeleteImageRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -379,10 +388,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E77809D81D174A1C00CC60F1 /* Argo.swift in Sources */,
 				E747C3911D1383460080EA8D /* Timestamps.swift in Sources */,
 				E77E4A4E1D14A77A006F57BC /* CreateUserFromFIRUserRequest.swift in Sources */,
 				E747C3841D13832D0080EA8D /* Firebase.swift in Sources */,
 				E747C38D1D13833E0080EA8D /* Timestampable.swift in Sources */,
+				E77809D61D173EBF00CC60F1 /* DeleteImageRequest.swift in Sources */,
 				E747C38B1D13833E0080EA8D /* Encodable.swift in Sources */,
 				E747C3871D13832D0080EA8D /* Swift.swift in Sources */,
 				E747C3B11D1395790080EA8D /* Thought.swift in Sources */,
@@ -396,6 +407,7 @@
 				E747C3AD1D13956D0080EA8D /* User.swift in Sources */,
 				E747C3861D13832D0080EA8D /* NSError.swift in Sources */,
 				E747C3901D1383460080EA8D /* Database.swift in Sources */,
+				E77809CE1D171A9100CC60F1 /* UploadImageRequest.swift in Sources */,
 				E747C38C1D13833E0080EA8D /* Modelable.swift in Sources */,
 				E747C3B31D1395DB0080EA8D /* GravatarGenerator.swift in Sources */,
 				E778098F1D15C73A00CC60F1 /* Environment.swift in Sources */,
@@ -525,16 +537,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseAuth/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseCrash/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseUI/FirebaseUIFrameworks/Auth/Frameworks\"",
-					"\"${PODS_ROOT}/GoogleInterchangeUtilities/Frameworks\"",
-					"\"${PODS_ROOT}/GoogleNetworkingUtilities/Frameworks\"",
-					"\"${PODS_ROOT}/GoogleSymbolUtilities/Frameworks\"",
-					"\"${PODS_ROOT}/GoogleUtilities/Frameworks\"",
+					"\"$(PROJECT_DIR)/../Pods\"/**",
 					"\"$(PROJECT_DIR)/../Carthage/Build/iOS\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Resources/Info.plist";
@@ -561,16 +564,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseAuth/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseCrash/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseUI/FirebaseUIFrameworks/Auth/Frameworks\"",
-					"\"${PODS_ROOT}/GoogleInterchangeUtilities/Frameworks\"",
-					"\"${PODS_ROOT}/GoogleNetworkingUtilities/Frameworks\"",
-					"\"${PODS_ROOT}/GoogleSymbolUtilities/Frameworks\"",
-					"\"${PODS_ROOT}/GoogleUtilities/Frameworks\"",
+					"\"$(PROJECT_DIR)/../Pods\"/**",
 					"\"$(PROJECT_DIR)/../Carthage/Build/iOS\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Resources/Info.plist";

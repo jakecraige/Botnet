@@ -21,6 +21,7 @@ target "FirebaseWrapper" do
   pod "Firebase/Auth"
   pod "Firebase/Crash"
   pod "Firebase/Database"
+  pod "Firebase/Storage"
   pod "FirebaseUI/AuthBase"
 end
 

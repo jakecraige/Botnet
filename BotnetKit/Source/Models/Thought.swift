@@ -8,6 +8,7 @@ public struct Thought: Modelable, Timestampable {
   public var timestamps: Timestamps?
   public var userID: String
   public var text: String
+  public var images: [NSURL]
 
   public var asActivity: NSUserActivity {
     return with(NSUserActivity(activityType: "com.thoughtbot.Botnet.activity-thought")) {
@@ -17,7 +18,7 @@ public struct Thought: Modelable, Timestampable {
   }
 
   public static func new() -> Thought {
-    return .init(id: "", timestamps: .None, userID: "", text: "")
+    return .init(id: "", timestamps: .None, userID: "", text: "", images: [])
   }
 
   public func user() -> Observable<User> {
@@ -32,6 +33,7 @@ extension Thought: Decodable {
       <*> json <|? "timestamps"
       <*> json <| "user_id"
       <*> json <| "text"
+      <*> (json <|| "images").or(.Success([]))
   }
 }
 
@@ -40,6 +42,7 @@ extension Thought: Encodable {
     return [
       "user_id": userID,
       "text": text,
+      "images": images.map { $0.absoluteString },
     ]
   }
 }

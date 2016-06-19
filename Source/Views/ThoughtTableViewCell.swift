@@ -21,7 +21,8 @@ final class ThoughtTableViewCell: UITableViewCell, Reusable {
       .subscribe(
         onNext: { [weak self] user in self?.updateUIForUser(user) },
         onError: { [weak self] error in self?.updateUIForUser(.None) }
-      ).addDisposableTo(disposeBag)
+      )
+      .addDisposableTo(disposeBag)
   }
 
   override func prepareForReuse() {

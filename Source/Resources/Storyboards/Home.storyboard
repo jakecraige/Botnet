@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <scenes>
@@ -222,37 +223,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H3a-Fo-BYR">
-                                <rect key="frame" x="20" y="72" width="560" height="508"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Koc-cy-qw0" id="e1K-rK-r6m"/>
-                                </connections>
-                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7yx-JD-b4f">
+                                <rect key="frame" x="20" y="72" width="560" height="175"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H3a-Fo-BYR">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="ahQ-oC-tu1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Koc-cy-qw0" id="e1K-rK-r6m"/>
+                                        </connections>
+                                    </textView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rYN-tg-WsX">
+                                        <rect key="frame" x="0.0" y="100" width="560" height="75"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uRw-4q-QBj"/>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="uRw-4q-QBj" secondAttribute="bottom" id="STc-xU-A21"/>
+                                            <constraint firstAttribute="trailing" secondItem="uRw-4q-QBj" secondAttribute="trailing" id="W4H-v5-hGq"/>
+                                            <constraint firstAttribute="height" constant="75" id="YJQ-j5-Dbf"/>
+                                            <constraint firstItem="uRw-4q-QBj" firstAttribute="top" secondItem="rYN-tg-WsX" secondAttribute="top" id="cqA-Jl-oSW"/>
+                                            <constraint firstItem="uRw-4q-QBj" firstAttribute="leading" secondItem="rYN-tg-WsX" secondAttribute="leading" id="m8p-gM-vlu"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rYN-tg-WsX" secondAttribute="trailing" id="YAB-8n-TNg"/>
+                                    <constraint firstAttribute="trailing" secondItem="H3a-Fo-BYR" secondAttribute="trailing" id="YkC-kf-BBu"/>
+                                    <constraint firstItem="rYN-tg-WsX" firstAttribute="leading" secondItem="7yx-JD-b4f" secondAttribute="leading" id="ZL0-z2-j1t"/>
+                                    <constraint firstItem="H3a-Fo-BYR" firstAttribute="leading" secondItem="7yx-JD-b4f" secondAttribute="leading" id="hvE-6s-6ev"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YAv-QW-3MS" firstAttribute="top" secondItem="H3a-Fo-BYR" secondAttribute="bottom" constant="20" id="OGu-qL-qU8"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="H3a-Fo-BYR" secondAttribute="leading" id="TeX-bf-3xc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="H3a-Fo-BYR" secondAttribute="trailing" id="bVf-aM-wta"/>
-                            <constraint firstItem="H3a-Fo-BYR" firstAttribute="top" secondItem="GCV-33-6Ni" secondAttribute="bottom" constant="8" id="fZa-kY-UpX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7yx-JD-b4f" secondAttribute="trailing" id="2nm-Hd-q9J"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="7yx-JD-b4f" secondAttribute="leading" id="jSc-3p-jIw"/>
+                            <constraint firstItem="YAv-QW-3MS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7yx-JD-b4f" secondAttribute="bottom" id="oqD-kD-WLi"/>
+                            <constraint firstItem="7yx-JD-b4f" firstAttribute="top" secondItem="GCV-33-6Ni" secondAttribute="bottom" constant="8" id="uvt-4f-hEI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Compose" id="Mtc-Qf-59C">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="qyW-nG-Igh">
                             <connections>
-                                <segue destination="Rxt-JF-8Hy" kind="unwind" unwindAction="unwindToThoughts:" id="rTw-EF-N8i"/>
+                                <segue destination="Rxt-JF-8Hy" kind="unwind" identifier="cancelCompose" unwindAction="unwindToThoughts:" id="rTw-EF-N8i"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Post" id="PPJ-ub-vfp">
-                            <connections>
-                                <action selector="postTapped:" destination="Koc-cy-qw0" id="5Hp-Qr-yMG"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Post" id="PPJ-ub-vfp">
+                                <connections>
+                                    <action selector="postTapped:" destination="Koc-cy-qw0" id="5Hp-Qr-yMG"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="camera" id="3JZ-Ja-iN4">
+                                <connections>
+                                    <action selector="addImageTapped:" destination="Koc-cy-qw0" id="8zq-Qe-Y0f"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addImageButton" destination="3JZ-Ja-iN4" id="tcW-Vo-lUJ"/>
+                        <outlet property="imageStackView" destination="uRw-4q-QBj" id="77l-yI-1g1"/>
                         <outlet property="postButton" destination="PPJ-ub-vfp" id="GXk-ia-MfY"/>
                         <outlet property="textView" destination="H3a-Fo-BYR" id="BqI-Bc-M7t"/>
                     </connections>
