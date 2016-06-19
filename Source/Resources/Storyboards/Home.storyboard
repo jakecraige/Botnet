@@ -238,25 +238,19 @@
                                             <outlet property="delegate" destination="Koc-cy-qw0" id="e1K-rK-r6m"/>
                                         </connections>
                                     </textView>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rYN-tg-WsX">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hT4-Ku-NCt" customClass="ImageCarouselContainerView" customModule="Botnet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="100" width="560" height="75"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uRw-4q-QBj"/>
-                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="uRw-4q-QBj" secondAttribute="bottom" id="STc-xU-A21"/>
-                                            <constraint firstAttribute="trailing" secondItem="uRw-4q-QBj" secondAttribute="trailing" id="W4H-v5-hGq"/>
-                                            <constraint firstAttribute="height" constant="75" id="YJQ-j5-Dbf"/>
-                                            <constraint firstItem="uRw-4q-QBj" firstAttribute="top" secondItem="rYN-tg-WsX" secondAttribute="top" id="cqA-Jl-oSW"/>
-                                            <constraint firstItem="uRw-4q-QBj" firstAttribute="leading" secondItem="rYN-tg-WsX" secondAttribute="leading" id="m8p-gM-vlu"/>
+                                            <constraint firstAttribute="height" constant="75" id="73g-Ub-76Q"/>
                                         </constraints>
-                                    </scrollView>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="rYN-tg-WsX" secondAttribute="trailing" id="YAB-8n-TNg"/>
+                                    <constraint firstAttribute="trailing" secondItem="hT4-Ku-NCt" secondAttribute="trailing" id="YMu-FY-bK0"/>
                                     <constraint firstAttribute="trailing" secondItem="H3a-Fo-BYR" secondAttribute="trailing" id="YkC-kf-BBu"/>
-                                    <constraint firstItem="rYN-tg-WsX" firstAttribute="leading" secondItem="7yx-JD-b4f" secondAttribute="leading" id="ZL0-z2-j1t"/>
                                     <constraint firstItem="H3a-Fo-BYR" firstAttribute="leading" secondItem="7yx-JD-b4f" secondAttribute="leading" id="hvE-6s-6ev"/>
+                                    <constraint firstItem="hT4-Ku-NCt" firstAttribute="leading" secondItem="7yx-JD-b4f" secondAttribute="leading" id="wr9-p7-5KW"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -289,7 +283,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addImageButton" destination="3JZ-Ja-iN4" id="tcW-Vo-lUJ"/>
-                        <outlet property="imageStackView" destination="uRw-4q-QBj" id="77l-yI-1g1"/>
+                        <outlet property="imageCarouselContainer" destination="hT4-Ku-NCt" id="OjT-jC-G84"/>
                         <outlet property="postButton" destination="PPJ-ub-vfp" id="GXk-ia-MfY"/>
                         <outlet property="textView" destination="H3a-Fo-BYR" id="BqI-Bc-M7t"/>
                     </connections>

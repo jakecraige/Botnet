@@ -2,11 +2,11 @@ import FirebaseWrapper
 import RxSwift
 
 public enum StorageUploadStatus {
-  case started
+  case started(String)
   case pause
   case resume
   case progress(NSProgress)
-  case done(NSURL)
+  case done(String, NSURL)
 }
 
 public struct UploadImageRequest {
@@ -28,7 +28,7 @@ public struct UploadImageRequest {
     let metadata = with(FIRStorageMetadata()) { $0.contentType = "image/jpeg" }
 
     return Observable.create { observer in
-      observer.onNext(.started)
+      observer.onNext(.started(childRef.fullPath))
 
       let task = childRef.putData(self.jpegData, metadata: metadata)
       task.observeStatus(.Pause) { _ in observer.onNext(.pause) }
@@ -57,7 +57,7 @@ public struct UploadImageRequest {
             return observer.onCompleted()
           }
 
-          observer.onNext(.done(url))
+          observer.onNext(.done(childRef.fullPath, url))
           observer.onCompleted()
         }
       }

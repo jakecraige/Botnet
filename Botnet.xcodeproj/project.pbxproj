@@ -56,6 +56,9 @@
 		E77809CC1D1717EE00CC60F1 /* Toucan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77809CB1D1717EE00CC60F1 /* Toucan.framework */; };
 		E77809D21D172E5D00CC60F1 /* ImagePreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E77809D11D172E5D00CC60F1 /* ImagePreviewView.xib */; };
 		E77809D41D172E9500CC60F1 /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809D31D172E9500CC60F1 /* ImagePreviewView.swift */; };
+		E77809DA1D17552F00CC60F1 /* ImageCarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E77809D91D17552F00CC60F1 /* ImageCarouselView.xib */; };
+		E77809DC1D1755E000CC60F1 /* ImageCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809DB1D1755E000CC60F1 /* ImageCarousel.swift */; };
+		E77809DE1D1758BE00CC60F1 /* ImageCarouselContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809DD1D1758BE00CC60F1 /* ImageCarouselContainerView.swift */; };
 		E77E4A501D14A7FD006F57BC /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E4A4F1D14A7FD006F57BC /* AuthenticationController.swift */; };
 		E7E466A41D10C3570059D2A4 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */; };
 		E7E466A91D10C4A60059D2A4 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466A81D10C4A60059D2A4 /* UIStoryboard.swift */; };
@@ -194,6 +197,9 @@
 		E77809CB1D1717EE00CC60F1 /* Toucan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Toucan.framework; path = Carthage/Build/iOS/Toucan.framework; sourceTree = "<group>"; };
 		E77809D11D172E5D00CC60F1 /* ImagePreviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagePreviewView.xib; sourceTree = "<group>"; };
 		E77809D31D172E9500CC60F1 /* ImagePreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
+		E77809D91D17552F00CC60F1 /* ImageCarouselView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCarouselView.xib; sourceTree = "<group>"; };
+		E77809DB1D1755E000CC60F1 /* ImageCarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCarousel.swift; sourceTree = "<group>"; };
+		E77809DD1D1758BE00CC60F1 /* ImageCarouselContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCarouselContainerView.swift; sourceTree = "<group>"; };
 		E77E4A4F1D14A7FD006F57BC /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
 		E7E466A81D10C4A60059D2A4 /* UIStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
@@ -363,6 +369,8 @@
 				E77809BF1D16E68A00CC60F1 /* ThoughtDetailTableViewCell.swift */,
 				E77809C11D16E96200CC60F1 /* CreatedAtLabel.swift */,
 				E77809D31D172E9500CC60F1 /* ImagePreviewView.swift */,
+				E77809DB1D1755E000CC60F1 /* ImageCarousel.swift */,
+				E77809DD1D1758BE00CC60F1 /* ImageCarouselContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -411,6 +419,7 @@
 			children = (
 				F8AFF647E21F7A652D7F2A75 /* LaunchScreen.xib */,
 				E77809D11D172E5D00CC60F1 /* ImagePreviewView.xib */,
+				E77809D91D17552F00CC60F1 /* ImageCarouselView.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -658,6 +667,7 @@
 				CCBBA9C71EB449976C5C1B6F /* Images.xcassets in Resources */,
 				E7E466B51D10C7830059D2A4 /* Authentication.storyboard in Resources */,
 				75708F5B08A9E99FF55DC00A /* Main.storyboard in Resources */,
+				E77809DA1D17552F00CC60F1 /* ImageCarouselView.xib in Resources */,
 				E7E466B31D10C7790059D2A4 /* Home.storyboard in Resources */,
 				E77809D21D172E5D00CC60F1 /* ImagePreviewView.xib in Resources */,
 				3BD5D09F0118F5817BC8D19F /* LaunchScreen.xib in Resources */,
@@ -931,9 +941,11 @@
 				E77809C21D16E96200CC60F1 /* CreatedAtLabel.swift in Sources */,
 				E7E466B71D10CE090059D2A4 /* AuthenticationViewController.swift in Sources */,
 				E77809CA1D17084600CC60F1 /* ImagePicker.swift in Sources */,
+				E77809DE1D1758BE00CC60F1 /* ImageCarouselContainerView.swift in Sources */,
 				E7E466A91D10C4A60059D2A4 /* UIStoryboard.swift in Sources */,
 				E747C2B91D1349140080EA8D /* UIViewController.swift in Sources */,
 				E77809C01D16E68A00CC60F1 /* ThoughtDetailTableViewCell.swift in Sources */,
+				E77809DC1D1755E000CC60F1 /* ImageCarousel.swift in Sources */,
 				E77E4A501D14A7FD006F57BC /* AuthenticationController.swift in Sources */,
 				E747C2BB1D13613B0080EA8D /* ShortcutIdentifier.swift in Sources */,
 				E747C2A11D11C9280080EA8D /* ThoughtsTableViewController.swift in Sources */,

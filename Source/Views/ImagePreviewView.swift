@@ -7,6 +7,8 @@ final class ImagePreviewView: UIView, NibLoadable {
   @IBOutlet var xButtonBackgroundView: UIView!
   @IBOutlet var xButton: UIButton!
 
+  var allowCancelAction: Bool = false
+
   private var xTapped: (() -> Void)?
 
   override func awakeFromNib() {
@@ -16,10 +18,13 @@ final class ImagePreviewView: UIView, NibLoadable {
     imageView.kf_indicator?.startAnimating()
   }
 
-  func configure(url: NSURL, xTapped: (() -> Void)) {
-    self.xTapped = xTapped
+  func configure(url: NSURL, cancelTapped: (() -> Void)) {
+    xTapped = cancelTapped
     imageView.kf_setImageWithURL(url, completionHandler: { [weak self] _ in
-      self?.xButtonBackgroundView.hidden = false
+      guard let `self` = self else { return }
+      if self.allowCancelAction {
+        self.xButtonBackgroundView.hidden = false
+      }
     })
   }
 

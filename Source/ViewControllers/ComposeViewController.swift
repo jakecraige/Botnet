@@ -6,7 +6,7 @@ import RxCocoa
 
 private enum State {
   case new
-  case uploading(ImagePreviewView)
+  case uploading
 }
 
 final class ComposeViewController: UIViewController {
@@ -18,9 +18,14 @@ final class ComposeViewController: UIViewController {
   @IBOutlet var postButton: UIBarButtonItem!
   @IBOutlet var addImageButton: UIBarButtonItem!
   @IBOutlet var textView: UITextView!
-  @IBOutlet var imageStackView: UIStackView!
+  @IBOutlet var imageCarouselContainer: ImageCarouselContainerView!
+  var imageCarousel: ImageCarouselView {
+    return imageCarouselContainer.carousel
+  }
 
   override func viewDidLoad() {
+    imageCarousel.allowCancelAction = true
+
     let textValid = textView.rx_text.asDriver().map { !$0.isEmpty }
     let notUploading = state.asDriver().map { currentState -> Bool in
       if case .new = currentState {
@@ -72,46 +77,27 @@ final class ComposeViewController: UIViewController {
 private extension ComposeViewController {
   func updateUI(fromStatus status: StorageUploadStatus) {
     switch status {
-    case .started:
-      addLoadingImagePreviewView()
-      
-    case let .done(url):
-      uploadCompleted(url)
-      
+    case let .started(path):
+      state.value = .uploading
+      imageCarousel.add(forKey: path)
+
+    case let .done(path, url):
+      state.value = .new
+      uploadedImages.append(url)
+      configureImageDestroy(path, url: url)
+
     default: break
     }
   }
 
-  func addLoadingImagePreviewView() {
-    guard case .new = state.value else {
-      fatalError("addLoadingImagePreviewView should only be called when status is .new")
-    }
-
-    let imageView = ImagePreviewView.loadFromNib()
-    NSLayoutConstraint.activateConstraints([
-      imageView.widthAnchor.constraintEqualToConstant(75),
-      imageView.heightAnchor.constraintEqualToConstant(75)
-    ])
-    imageStackView.addArrangedSubview(imageView)
-
-    state.value = .uploading(imageView)
-  }
-
-  func uploadCompleted(url: NSURL) {
-    guard case let .uploading(imageView) = state.value else {
-      fatalError("uploadCompleted should only be called when status is .uploading")
-    }
-
-    uploadedImages.append(url)
-    imageView.configure(url, xTapped: {
+  func configureImageDestroy(path: String, url: NSURL) {
+    imageCarousel.view(forKey: path)?.configure(url, cancelTapped: {
       DeleteImageRequest(url: url)
         .perform()
         .subscribe()
         .addDisposableTo(self.disposeBag)
-      self.imageStackView.removeArrangedSubview(imageView)
+      self.imageCarousel.remove(atKey: path)
     })
-
-    state.value = .new
   }
 
   func deleteUploadedImages() {
