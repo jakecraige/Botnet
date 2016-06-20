@@ -22,11 +22,12 @@ final class ThoughtDetailTableViewCell: UITableViewCell, Reusable {
     carousel.imageSize = CGSize(width: heightConstant, height: heightConstant)
   }
 
-  func configure(thought: Thought) {
+  func configure(thought: Thought, imageTapped: ((UIImage, [UIImage]) -> Void)) {
     carouselHeightConstraint.active = !thought.images.isEmpty
     thoughtTextLabel.text = thought.text
     thoughtCreatedAtLabel.date = thought.timestamps?.createdAt
 
+    carousel.onImageTapped = imageTapped
     carousel.add(fromURLs: thought.images)
 
     thought.user()
@@ -39,6 +40,7 @@ final class ThoughtDetailTableViewCell: UITableViewCell, Reusable {
 
   override func prepareForReuse() {
     disposeBag = DisposeBag()
+    carousel.reset()
   }
 }
 

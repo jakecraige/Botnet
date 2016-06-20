@@ -1,4 +1,5 @@
 import UIKit
+import Agrume
 import BotnetKit
 import FirebaseWrapper
 import RxSwift
@@ -12,8 +13,15 @@ final class ThoughtsTableViewController: UITableViewController {
     let thoughts = controller.thoughts.asObservable()
 
     thoughts
-      .bindTo(tableView.rx_itemsWithCellIdentifier(ThoughtTableViewCell.self)) { (_, thought, cell) in
-        cell.configure(thought)
+      .bindTo(tableView.rx_itemsWithCellIdentifier(ThoughtTableViewCell.self)) { [weak self] (_, thought, cell) in
+        guard let `self` = self else { return }
+        cell.configure(thought, imageTapped: { (image, images) in
+          let agrume = Agrume(
+            images: images,
+            startIndex: images.indexOf(image)
+          )
+          agrume.showFrom(self)
+        })
       }
       .addDisposableTo(disposeBag)
   }

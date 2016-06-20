@@ -22,10 +22,13 @@ final class ThoughtTableViewCell: UITableViewCell, Reusable {
     carouselContainerView.carousel.imageSize = CGSize(width: heightConstant, height: heightConstant)
   }
 
-  func configure(thought: Thought) {
+  func configure(thought: Thought, imageTapped: ((UIImage, [UIImage]) -> Void)) {
     self.thought = thought
     thoughtTextLabel.text = thought.text
 
+    carouselContainerView.hidden = thought.images.isEmpty
+    carouselContainerView.carousel.reset()
+    carouselContainerView.carousel.onImageTapped = imageTapped
     carouselContainerView.carousel.add(fromURLs: thought.images)
 
     thought.user()
@@ -38,11 +41,6 @@ final class ThoughtTableViewCell: UITableViewCell, Reusable {
 
   override func prepareForReuse() {
     disposeBag = DisposeBag()
-  }
-
-  override func updateConstraints() {
-    carouselHeightConstraint.active = !thought.images.isEmpty
-    super.updateConstraints()
   }
 }
 

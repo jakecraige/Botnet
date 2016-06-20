@@ -1,3 +1,4 @@
+import Agrume
 import BotnetKit
 import UIKit
 import Kingfisher
@@ -24,8 +25,15 @@ final class ComposeViewController: UIViewController {
   }
 
   override func viewDidLoad() {
+    textView.becomeFirstResponder()
+
     imageCarousel.allowCancelAction = true
     imageCarousel.imageSize = CGSize(width: 75, height: 75)
+    imageCarousel.onImageTapped = { [weak self] image, images in
+      guard let `self` = self else { return }
+      let agrume = Agrume(images: images, startIndex: images.indexOf(image))
+      agrume.showFrom(self, backgroundSnapshotVC: self.navigationController)
+    }
 
     let textValid = textView.rx_text.asDriver().map { !$0.isEmpty }
     let notUploading = state.asDriver().map { currentState -> Bool in
@@ -44,6 +52,11 @@ final class ComposeViewController: UIViewController {
     readyToPost
       .drive(postButton.rx_enabled)
       .addDisposableTo(disposeBag)
+  }
+
+  override func viewWillDisappear(animated: Bool) {
+    textView.resignFirstResponder()
+    super.viewWillDisappear(animated)
   }
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -92,7 +105,7 @@ private extension ComposeViewController {
   }
 
   func configureImageDestroy(path: String, url: NSURL) {
-    imageCarousel.view(forKey: path)?.configure(url, cancelTapped: {
+    imageCarousel.configureView(key: path, url: url, cancelTapped: {
       DeleteImageRequest(url: url)
         .perform()
         .subscribe()

@@ -59,6 +59,7 @@
 		E77809DA1D17552F00CC60F1 /* ImageCarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E77809D91D17552F00CC60F1 /* ImageCarouselView.xib */; };
 		E77809DC1D1755E000CC60F1 /* ImageCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809DB1D1755E000CC60F1 /* ImageCarousel.swift */; };
 		E77809DE1D1758BE00CC60F1 /* ImageCarouselContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77809DD1D1758BE00CC60F1 /* ImageCarouselContainerView.swift */; };
+		E77809E01D1772B800CC60F1 /* Agrume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77809DF1D1772B800CC60F1 /* Agrume.framework */; };
 		E77E4A501D14A7FD006F57BC /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E4A4F1D14A7FD006F57BC /* AuthenticationController.swift */; };
 		E7E466A41D10C3570059D2A4 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */; };
 		E7E466A91D10C4A60059D2A4 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E466A81D10C4A60059D2A4 /* UIStoryboard.swift */; };
@@ -200,6 +201,7 @@
 		E77809D91D17552F00CC60F1 /* ImageCarouselView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCarouselView.xib; sourceTree = "<group>"; };
 		E77809DB1D1755E000CC60F1 /* ImageCarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCarousel.swift; sourceTree = "<group>"; };
 		E77809DD1D1758BE00CC60F1 /* ImageCarouselContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCarouselContainerView.swift; sourceTree = "<group>"; };
+		E77809DF1D1772B800CC60F1 /* Agrume.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Agrume.framework; path = Carthage/Build/iOS/Agrume.framework; sourceTree = "<group>"; };
 		E77E4A4F1D14A7FD006F57BC /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		E7E466A31D10C3570059D2A4 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
 		E7E466A81D10C4A60059D2A4 /* UIStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0312F9BB688FA47B2B8411C6 /* Foundation.framework in Frameworks */,
+				E77809E01D1772B800CC60F1 /* Agrume.framework in Frameworks */,
 				E7E466C51D11B5F40059D2A4 /* Argo.framework in Frameworks */,
 				E7E466B91D11B0580059D2A4 /* Async.framework in Frameworks */,
 				E747C3A81D138DF10080EA8D /* BotnetKit.framework in Frameworks */,
@@ -393,6 +396,7 @@
 		B306BDBBF6B3F3D9B9EE9E9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E77809DF1D1772B800CC60F1 /* Agrume.framework */,
 				E77809CB1D1717EE00CC60F1 /* Toucan.framework */,
 				E77809C31D16EE8100CC60F1 /* Kingfisher.framework */,
 				E77809821D14E8A700CC60F1 /* FirebaseWrapper.framework */,
@@ -813,6 +817,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SuperDelegate.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Toucan.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Agrume.framework",
 			);
 			name = "Copy frameworks (Carthage)";
 			outputPaths = (

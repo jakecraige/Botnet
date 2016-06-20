@@ -9,6 +9,7 @@ final class ImagePreviewView: UIView, NibLoadable {
 
   var allowCancelAction: Bool = false
 
+  private var imageTapped: ((UIImage) -> Void)?
   private var xTapped: (() -> Void)?
 
   override func awakeFromNib() {
@@ -18,7 +19,10 @@ final class ImagePreviewView: UIView, NibLoadable {
     imageView.kf_indicator?.startAnimating()
   }
 
-  func configure(url: NSURL, cancelTapped: (() -> Void)? = .None) {
+  func configure(url: NSURL, cancelTapped: (() -> Void)? = .None, imageTapped: ((UIImage) -> Void)? = .None) {
+    if let imageTapped = imageTapped {
+      self.imageTapped = imageTapped
+    }
     xTapped = cancelTapped
     imageView.kf_setImageWithURL(url, completionHandler: { [weak self] _ in
       guard let `self` = self else { return }
@@ -30,5 +34,10 @@ final class ImagePreviewView: UIView, NibLoadable {
 
   @IBAction func xButtonTapped() {
     xTapped?()
+  }
+
+  @IBAction func imageTapped(sender: UITapGestureRecognizer) {
+    guard let image = imageView.image else { return }
+    imageTapped?(image)
   }
 }

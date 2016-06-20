@@ -7,17 +7,33 @@ final class ImageCarouselView: UIScrollView, NibLoadable {
 
   var allowCancelAction: Bool = false
   var imageSize = CGSize(width: 75, height: 75)
+  var onImageTapped: ((UIImage, [UIImage]) -> Void)?
 
   private var viewCache = [String: ImagePreviewView]()
 
-  func add(fromURLs urls: [NSURL]) -> [ImagePreviewView] {
-    return urls.map { add(fromURL: $0) }
+  func reset() {
+    stackView.arrangedSubviews.forEach { stackView.removeArrangedSubview($0) }
+    viewCache = [:]
+  }
+
+  func add(fromURLs urls: [NSURL], cancelTapped: (() -> Void)? = .None) -> [ImagePreviewView] {
+    return urls.map { add(fromURL: $0, cancelTapped: cancelTapped) }
   }
 
   func add(fromURL url: NSURL, cancelTapped: (() -> Void)? = .None) -> ImagePreviewView {
     return with(add(forKey: url.absoluteString)) {
-      $0.configure(url, cancelTapped: cancelTapped)
+      $0.configure(url, cancelTapped: cancelTapped, imageTapped: { [weak self] image in
+        self?.handleImageTap(image)
+      })
     }
+  }
+
+  func configureView(key key: String, url: NSURL, cancelTapped: (() -> Void)? = .None) {
+    guard let view = view(forKey: key) else { return }
+
+    view.configure(url, cancelTapped: cancelTapped, imageTapped: { [weak self] image in
+      self?.handleImageTap(image)
+    })
   }
 
   func add(forKey key: String) -> ImagePreviewView {
@@ -42,5 +58,12 @@ final class ImageCarouselView: UIScrollView, NibLoadable {
 
   func view(forKey key: String) -> ImagePreviewView? {
     return viewCache[key]
+  }
+}
+
+private extension ImageCarouselView {
+  func handleImageTap(image: UIImage) {
+    let allImages = stackView.arrangedSubviews.flatMap { ($0 as? ImagePreviewView)?.imageView.image }
+    onImageTapped?(image, allImages)
   }
 }
