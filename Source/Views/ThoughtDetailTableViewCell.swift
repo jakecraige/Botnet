@@ -18,7 +18,8 @@ final class ThoughtDetailTableViewCell: UITableViewCell, Reusable {
   var carousel: ImageCarouselView { return carouselContainerView.carousel }
 
   override func awakeFromNib() {
-    carousel.imageSize = CGSize(width: 100, height: 100)
+    let heightConstant = carouselHeightConstraint.constant
+    carousel.imageSize = CGSize(width: heightConstant, height: heightConstant)
   }
 
   func configure(thought: Thought) {

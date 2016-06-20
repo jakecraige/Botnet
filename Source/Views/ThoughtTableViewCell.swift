@@ -6,16 +6,27 @@ import RxSwift
 import RxCocoa
 
 final class ThoughtTableViewCell: UITableViewCell, Reusable {
-  static let estimatedHeight: CGFloat = 72
+  static let estimatedHeight: CGFloat = 125
 
   var disposeBag = DisposeBag()
 
   @IBOutlet var profileImageView: UIImageView!
   @IBOutlet var nameLabel: UILabel!
   @IBOutlet var thoughtTextLabel: UILabel!
+  @IBOutlet var carouselContainerView: ImageCarouselContainerView!
+  @IBOutlet var carouselHeightConstraint: NSLayoutConstraint!
+  var thought: Thought!
+
+  override func awakeFromNib() {
+    let heightConstant = carouselHeightConstraint.constant
+    carouselContainerView.carousel.imageSize = CGSize(width: heightConstant, height: heightConstant)
+  }
 
   func configure(thought: Thought) {
+    self.thought = thought
     thoughtTextLabel.text = thought.text
+
+    carouselContainerView.carousel.add(fromURLs: thought.images)
 
     thought.user()
       .subscribe(
@@ -27,6 +38,11 @@ final class ThoughtTableViewCell: UITableViewCell, Reusable {
 
   override func prepareForReuse() {
     disposeBag = DisposeBag()
+  }
+
+  override func updateConstraints() {
+    carouselHeightConstraint.active = !thought.images.isEmpty
+    super.updateConstraints()
   }
 }
 

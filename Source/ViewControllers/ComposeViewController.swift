@@ -25,6 +25,7 @@ final class ComposeViewController: UIViewController {
 
   override func viewDidLoad() {
     imageCarousel.allowCancelAction = true
+    imageCarousel.imageSize = CGSize(width: 75, height: 75)
 
     let textValid = textView.rx_text.asDriver().map { !$0.isEmpty }
     let notUploading = state.asDriver().map { currentState -> Bool in
