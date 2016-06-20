@@ -1,3 +1,4 @@
+import BotnetKit
 import UIKit
 import Reusable
 
@@ -5,8 +6,19 @@ final class ImageCarouselView: UIScrollView, NibLoadable {
   @IBOutlet var stackView: UIStackView!
 
   var allowCancelAction: Bool = false
+  var imageSize = CGSize(width: 75, height: 75)
 
   private var viewCache = [String: ImagePreviewView]()
+
+  func add(fromURLs urls: [NSURL]) -> [ImagePreviewView] {
+    return urls.map { add(fromURL: $0) }
+  }
+
+  func add(fromURL url: NSURL, cancelTapped: (() -> Void)? = .None) -> ImagePreviewView {
+    return with(add(forKey: url.absoluteString)) {
+      $0.configure(url, cancelTapped: cancelTapped)
+    }
+  }
 
   func add(forKey key: String) -> ImagePreviewView {
     guard viewCache[key] == .None else { return viewCache[key]! }
@@ -16,8 +28,8 @@ final class ImageCarouselView: UIScrollView, NibLoadable {
     viewCache[key] = imageView
 
     NSLayoutConstraint.activateConstraints([
-      imageView.widthAnchor.constraintEqualToConstant(75),
-      imageView.heightAnchor.constraintEqualToConstant(75)
+      imageView.widthAnchor.constraintEqualToConstant(imageSize.width),
+      imageView.heightAnchor.constraintEqualToConstant(imageSize.height)
     ])
     stackView.addArrangedSubview(imageView)
     return imageView

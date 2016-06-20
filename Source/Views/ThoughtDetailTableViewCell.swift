@@ -13,10 +13,20 @@ final class ThoughtDetailTableViewCell: UITableViewCell, Reusable {
   @IBOutlet var authorNameLabel: UILabel!
   @IBOutlet var thoughtTextLabel: UILabel!
   @IBOutlet var thoughtCreatedAtLabel: CreatedAtLabel!
+  @IBOutlet var carouselContainerView: ImageCarouselContainerView!
+  @IBOutlet var carouselHeightConstraint: NSLayoutConstraint!
+  var carousel: ImageCarouselView { return carouselContainerView.carousel }
+
+  override func awakeFromNib() {
+    carousel.imageSize = CGSize(width: 100, height: 100)
+  }
 
   func configure(thought: Thought) {
+    carouselHeightConstraint.active = !thought.images.isEmpty
     thoughtTextLabel.text = thought.text
     thoughtCreatedAtLabel.date = thought.timestamps?.createdAt
+
+    carousel.add(fromURLs: thought.images)
 
     thought.user()
       .observeOn(MainScheduler.instance)

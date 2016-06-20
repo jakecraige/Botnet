@@ -18,7 +18,7 @@ final class ImagePreviewView: UIView, NibLoadable {
     imageView.kf_indicator?.startAnimating()
   }
 
-  func configure(url: NSURL, cancelTapped: (() -> Void)) {
+  func configure(url: NSURL, cancelTapped: (() -> Void)? = .None) {
     xTapped = cancelTapped
     imageView.kf_setImageWithURL(url, completionHandler: { [weak self] _ in
       guard let `self` = self else { return }

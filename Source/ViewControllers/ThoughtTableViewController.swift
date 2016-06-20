@@ -22,3 +22,14 @@ final class ThoughtTableViewController: UITableViewController {
     thoughtActivity?.becomeCurrent()
   }
 }
+
+// MARK: UITableViewDelegate
+extension ThoughtTableViewController {
+  override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return ThoughtDetailTableViewCell.estimatedHeight
+  }
+
+  override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return UITableViewAutomaticDimension
+  }
+}

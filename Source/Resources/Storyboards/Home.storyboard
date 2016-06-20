@@ -116,22 +116,22 @@
         <scene sceneID="T6O-uI-Gq3">
             <objects>
                 <tableViewController id="wV1-p7-9sV" customClass="ThoughtTableViewController" customModule="Botnet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="148" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uzd-09-ZdZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="274" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uzd-09-ZdZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ThoughtDetailTableViewCell" rowHeight="148" id="wLr-Gk-htA" customClass="ThoughtDetailTableViewCell" customModule="Botnet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="148"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ThoughtDetailTableViewCell" rowHeight="274" id="wLr-Gk-htA" customClass="ThoughtDetailTableViewCell" customModule="Botnet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="274"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wLr-Gk-htA" id="o86-f9-yNk">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="148"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="274"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lLz-v8-o4v">
-                                            <rect key="frame" x="8" y="8" width="584" height="132"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="lLz-v8-o4v">
+                                            <rect key="frame" x="8" y="8" width="584" height="258"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ac7-OZ-Ime">
+                                                <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="25" misplaced="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ac7-OZ-Ime">
                                                     <rect key="frame" x="0.0" y="0.0" width="144" height="50"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F04-5c-ss2">
@@ -151,21 +151,30 @@
                                                         <constraint firstAttribute="height" constant="50" id="V08-OU-2OZ"/>
                                                     </constraints>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="This is a very interesting thought. Full of deep thinking that makes you think about the world differently." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJN-TO-t6t">
-                                                    <rect key="frame" x="0.0" y="55" width="584" height="41"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is a very interesting thought. Full of deep thinking that makes you think about the world differently." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJN-TO-t6t">
+                                                    <rect key="frame" x="0.0" y="62" width="584" height="42"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="6/18/16, 7:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6w-OX-1So" customClass="CreatedAtLabel" customModule="Botnet" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="101" width="89" height="32"/>
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="swS-43-qNW" customClass="ImageCarouselContainerView" customModule="Botnet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="116" width="584" height="114"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="Sgw-nn-JSb"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" misplaced="YES" text="6/18/16, 7:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6w-OX-1So" customClass="CreatedAtLabel" customModule="Botnet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="242" width="89" height="17"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="swS-43-qNW" firstAttribute="leading" secondItem="lLz-v8-o4v" secondAttribute="leading" id="AU9-gD-5ND"/>
                                                 <constraint firstAttribute="trailing" secondItem="NJN-TO-t6t" secondAttribute="trailing" id="VGb-Iz-mgM"/>
+                                                <constraint firstAttribute="trailing" secondItem="swS-43-qNW" secondAttribute="trailing" id="mdp-oV-zCb"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
@@ -179,6 +188,8 @@
                                 <connections>
                                     <outlet property="authorImageView" destination="F04-5c-ss2" id="RDr-kb-u4f"/>
                                     <outlet property="authorNameLabel" destination="f8Z-Nr-nvs" id="tDv-1h-kd9"/>
+                                    <outlet property="carouselContainerView" destination="swS-43-qNW" id="EnF-qU-Pnv"/>
+                                    <outlet property="carouselHeightConstraint" destination="Sgw-nn-JSb" id="tpB-ip-Ouc"/>
                                     <outlet property="thoughtCreatedAtLabel" destination="g6w-OX-1So" id="6Jz-Sc-Ccr"/>
                                     <outlet property="thoughtTextLabel" destination="NJN-TO-t6t" id="NRB-q1-fam"/>
                                 </connections>
