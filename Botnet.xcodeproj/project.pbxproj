@@ -71,6 +71,7 @@
 		E7E466C71D11B6310059D2A4 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E466C61D11B6310059D2A4 /* Curry.framework */; };
 		E7E466C91D11B7370059D2A4 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E466C81D11B7370059D2A4 /* RxSwift.framework */; };
 		E7E466CB1D11B7590059D2A4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E466CA1D11B7590059D2A4 /* RxCocoa.framework */; };
+		E7F16DFC1D1DCDCC002A47A4 /* FirebaseAuthUIBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7F16DFB1D1DCDCC002A47A4 /* FirebaseAuthUIBundle.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +214,7 @@
 		E7E466C61D11B6310059D2A4 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = "<group>"; };
 		E7E466C81D11B7370059D2A4 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		E7E466CA1D11B7590059D2A4 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		E7F16DFB1D1DCDCC002A47A4 /* FirebaseAuthUIBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FirebaseAuthUIBundle.bundle; path = Pods/FirebaseUI/FirebaseUIFrameworks/Auth/Resources/FirebaseAuthUIBundle.bundle; sourceTree = "<group>"; };
 		EAEF264383161D1B0E5DBE9E /* UnitTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		F8AFF647E21F7A652D7F2A75 /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		FFF9F7F82776D07172802B86 /* Pods-Botnet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botnet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Botnet/Pods-Botnet.release.xcconfig"; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 		B306BDBBF6B3F3D9B9EE9E9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7F16DFB1D1DCDCC002A47A4 /* FirebaseAuthUIBundle.bundle */,
 				E77809DF1D1772B800CC60F1 /* Agrume.framework */,
 				E77809CB1D1717EE00CC60F1 /* Toucan.framework */,
 				E77809C31D16EE8100CC60F1 /* Kingfisher.framework */,
@@ -676,6 +679,7 @@
 				E77809D21D172E5D00CC60F1 /* ImagePreviewView.xib in Resources */,
 				3BD5D09F0118F5817BC8D19F /* LaunchScreen.xib in Resources */,
 				DE53CD4715BFF97DB980830A /* Settings.bundle in Resources */,
+				E7F16DFC1D1DCDCC002A47A4 /* FirebaseAuthUIBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
