@@ -1,7 +1,4 @@
 import UIKit
-import BotnetKit
-import RxSwift
-import RxCocoa
 
 final class MessagesViewController: UITableViewController {
 }
@@ -10,6 +7,11 @@ final class MessagesViewController: UITableViewController {
 extension MessagesViewController {
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 50
+  }
+
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    tableView.deselectAllRows(animated) // You know, UIKit bugs where it doesn't deselect rows.
   }
 }
 

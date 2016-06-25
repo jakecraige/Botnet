@@ -1,3 +1,5 @@
+import Foundation
+
 /// Returns `item` after calling `update` to inspect and possibly
 /// modify it.
 ///
@@ -9,4 +11,9 @@ public func with<T>(item: T, @noescape update: ((inout T) throws -> Void)) rethr
   var this = item
   try update(&this)
   return this
+}
+
+public func randomValueFrom<T>(array: [T]) -> T {
+  let index = Int(arc4random_uniform(UInt32(array.count)))
+  return array[index]
 }

@@ -76,6 +76,9 @@
 		E7F16E021D1DD128002A47A4 /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F16E011D1DD128002A47A4 /* Messages.storyboard */; };
 		E7F16E041D1DF17E002A47A4 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F16E031D1DF17E002A47A4 /* MessagesViewController.swift */; };
 		E7F16E061D1DF22A002A47A4 /* MessagePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F16E051D1DF22A002A47A4 /* MessagePreviewCell.swift */; };
+		E7F16E081D1E269D002A47A4 /* MessageUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F16E071D1E269D002A47A4 /* MessageUserCell.swift */; };
+		E7F16E0A1D1E26A5002A47A4 /* MessageFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F16E091D1E26A5002A47A4 /* MessageFriendCell.swift */; };
+		E7F16E0C1D1E2747002A47A4 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F16E0B1D1E2747002A47A4 /* MessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +226,9 @@
 		E7F16E011D1DD128002A47A4 /* Messages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
 		E7F16E031D1DF17E002A47A4 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		E7F16E051D1DF22A002A47A4 /* MessagePreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePreviewCell.swift; sourceTree = "<group>"; };
+		E7F16E071D1E269D002A47A4 /* MessageUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageUserCell.swift; sourceTree = "<group>"; };
+		E7F16E091D1E26A5002A47A4 /* MessageFriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageFriendCell.swift; sourceTree = "<group>"; };
+		E7F16E0B1D1E2747002A47A4 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		EAEF264383161D1B0E5DBE9E /* UnitTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		F8AFF647E21F7A652D7F2A75 /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		FFF9F7F82776D07172802B86 /* Pods-Botnet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botnet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Botnet/Pods-Botnet.release.xcconfig"; sourceTree = "<group>"; };
@@ -387,6 +393,8 @@
 				E77809DB1D1755E000CC60F1 /* ImageCarousel.swift */,
 				E77809DD1D1758BE00CC60F1 /* ImageCarouselContainerView.swift */,
 				E7F16E051D1DF22A002A47A4 /* MessagePreviewCell.swift */,
+				E7F16E071D1E269D002A47A4 /* MessageUserCell.swift */,
+				E7F16E091D1E26A5002A47A4 /* MessageFriendCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -523,6 +531,7 @@
 				E747C2B01D1214070080EA8D /* ComposeViewController.swift */,
 				E77809BB1D16E20A00CC60F1 /* ThoughtTableViewController.swift */,
 				E7F16E031D1DF17E002A47A4 /* MessagesViewController.swift */,
+				E7F16E0B1D1E2747002A47A4 /* MessageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -956,6 +965,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E747C2AD1D11DA8E0080EA8D /* ThoughtsController.swift in Sources */,
+				E7F16E0C1D1E2747002A47A4 /* MessageViewController.swift in Sources */,
 				E77809D41D172E9500CC60F1 /* ImagePreviewView.swift in Sources */,
 				3025C5017E38755ED543C19F /* AppDelegate.swift in Sources */,
 				E747C3BA1D1398700080EA8D /* ApplicationController.swift in Sources */,
@@ -971,12 +981,14 @@
 				E77809DC1D1755E000CC60F1 /* ImageCarousel.swift in Sources */,
 				E77E4A501D14A7FD006F57BC /* AuthenticationController.swift in Sources */,
 				E747C2BB1D13613B0080EA8D /* ShortcutIdentifier.swift in Sources */,
+				E7F16E081D1E269D002A47A4 /* MessageUserCell.swift in Sources */,
 				E747C2A11D11C9280080EA8D /* ThoughtsTableViewController.swift in Sources */,
 				E747C2B11D1214070080EA8D /* ComposeViewController.swift in Sources */,
 				E7F16E061D1DF22A002A47A4 /* MessagePreviewCell.swift in Sources */,
 				E747C3001D1378570080EA8D /* UITableView.swift in Sources */,
 				E7F16E041D1DF17E002A47A4 /* MessagesViewController.swift in Sources */,
 				E77809BE1D16E2FA00CC60F1 /* SegueIdentifier.swift in Sources */,
+				E7F16E0A1D1E26A5002A47A4 /* MessageFriendCell.swift in Sources */,
 				E7E466A41D10C3570059D2A4 /* ApplicationViewController.swift in Sources */,
 				E77809C61D16F5D400CC60F1 /* ActivityIdentifier.swift in Sources */,
 			);
