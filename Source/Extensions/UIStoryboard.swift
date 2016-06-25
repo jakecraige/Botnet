@@ -4,6 +4,7 @@ enum Storyboard: String {
   case Authentication
   case Home
   case Main
+  case Thoughts
 }
 
 extension UIStoryboard {
