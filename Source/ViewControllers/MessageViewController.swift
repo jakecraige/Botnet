@@ -1,6 +1,20 @@
 import UIKit
+import BotnetKit
 
 private var cellCount = 100
+
+private var messages = [
+  "Vivamus fermentum mattis ipsum, vel euismod diam convallis eu. Mauris rutrum felis vitae lacinia lobortis.",
+  "Duis mattis sodales nunc. Ut accumsan vulputate vestibulum. Pellentesque hendrerit orci ac eros semper rhoncus. Donec semper ac massa ac.",
+  "Ut a tempus lacus, sit amet tincidunt felis. Vestibulum ante.",
+  "Integer finibus vel ipsum sed tempus. Phasellus vel justo at magna euismod euismod. Aenean iaculis mi mi. Nullam sit amet.",
+  "In porta ullamcorper nisi. Proin faucibus, dui ut consectetur sodales, arcu metus consequat quam, in pretium metus mi et nulla. Maecenas nec metus pellentesque, mattis velit vitae, blandit nunc. Vivamus varius finibus massa a feugiat.",
+  "Praesent gravida neque eu lacinia.",
+  "Fusce in lorem sed dolor volutpat ultricies. Vestibulum sodales volutpat malesuada. Maecenas fringilla lacus vitae commodo blandit. Curabitur eu interdum augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non feugiat mauris. Pellentesque condimentum mauris eget eleifend sodales.",
+  "Morbi sagittis urna in pretium pellentesque. Sed ultricies orci ut imperdiet pretium. Sed pharetra tincidunt.",
+  "Maecenas id dictum sapien, eget pretium tortor. Mauris at metus vehicula ligula malesuada laoreet. Ut nec sodales.",
+  "Donec sollicitudin volutpat erat, non."
+]
 
 private enum Row: Int {
   case friend
@@ -13,6 +27,10 @@ private enum Row: Int {
     }
     self = value
   }
+}
+
+let cells: [String] = (0..<cellCount).map { idx in
+  return randomValueFrom(messages)
 }
 
 final class MessageViewController: UITableViewController {
@@ -49,10 +67,11 @@ extension MessageViewController {
     switch Row(indexPath: indexPath) {
     case .friend:
       let cell: MessageFriendCell = tableView.dequeueReusableCell(indexPath: indexPath)
-      cell.configure()
+      cell.configure(cells[indexPath.row])
       return cell
     case .user:
       let cell: MessageUserCell = tableView.dequeueReusableCell(indexPath: indexPath)
+      cell.configure(cells[indexPath.row])
       return cell
     }
   }
