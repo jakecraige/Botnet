@@ -25,11 +25,12 @@ final class ThoughtTableViewCell: UITableViewCell, Reusable {
   func configure(thought: Thought, imageTapped: ((UIImage, [UIImage]) -> Void)) {
     self.thought = thought
     thoughtTextLabel.text = thought.text
-
     carouselContainerView.hidden = thought.images.isEmpty
-    carouselContainerView.carousel.reset()
-    carouselContainerView.carousel.onImageTapped = imageTapped
-    carouselContainerView.carousel.add(fromURLs: thought.images)
+
+    if !carouselContainerView.hidden {
+      carouselContainerView.carousel.onImageTapped = imageTapped
+      carouselContainerView.carousel.add(fromURLs: thought.images)
+    }
 
     thought.user()
       .subscribe(
@@ -41,6 +42,7 @@ final class ThoughtTableViewCell: UITableViewCell, Reusable {
 
   override func prepareForReuse() {
     disposeBag = DisposeBag()
+    carouselContainerView.carousel.reset()
   }
 }
 
