@@ -12,7 +12,10 @@ final class ImageCarouselView: UIScrollView, NibLoadable {
   private var viewCache = [String: ImagePreviewView]()
 
   func reset() {
-    stackView.arrangedSubviews.forEach { stackView.removeArrangedSubview($0) }
+    stackView.arrangedSubviews.forEach {
+      stackView.removeArrangedSubview($0)
+      $0.removeFromSuperview()
+    }
     viewCache = [:]
   }
 
