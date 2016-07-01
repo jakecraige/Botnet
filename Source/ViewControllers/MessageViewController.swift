@@ -1,7 +1,9 @@
 import UIKit
 import BotnetKit
+import RxCocoa
+import RxSwift
 
-private var cellCount = 100
+private var cellCount = 30
 
 private var messages = [
   "Vivamus fermentum mattis ipsum, vel euismod diam convallis eu. Mauris rutrum felis vitae lacinia lobortis.",
@@ -33,11 +35,19 @@ let cells: [String] = (0..<cellCount).map { idx in
   return randomValueFrom(messages)
 }
 
-final class MessageViewController: UITableViewController {
+final class MessageViewController: UIViewController {
+  let disposeBag = DisposeBag()
   var shouldScrollToBottom = true
 
+  @IBOutlet var tableView: UITableView!
+  @IBOutlet var contentBottomConstraint: NSLayoutConstraint!
+
   override func viewDidLoad() {
+    automaticallyAdjustsScrollViewInsets = false
+    tableView.delegate = self
+    tableView.dataSource = self
     tableView.rowHeight = UITableViewAutomaticDimension
+    subscribeToKeyboardNotifications()
   }
 
   override func viewDidLayoutSubviews() {
@@ -47,23 +57,54 @@ final class MessageViewController: UITableViewController {
   }
 }
 
-// MARK: UIScrollViewDelegate
-extension MessageViewController {
-  override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+private extension MessageViewController {
+  func subscribeToKeyboardNotifications() {
+    let center = NSNotificationCenter.defaultCenter()
+    let heightConstant = Variable(CGFloat(0))
+
+    center
+      .rx_notification(UIKeyboardDidShowNotification)
+      .map { notification -> CGFloat in
+          guard let info = notification.userInfo,
+            kbHeight = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue.size.height
+            else { return 0 }
+          return kbHeight
+      }
+      .bindTo(heightConstant)
+      .addDisposableTo(disposeBag)
+
+    center
+      .rx_notification(UIKeyboardDidHideNotification)
+      .map { _ in CGFloat(0) }
+      .startWith(CGFloat(0))
+      .bindTo(heightConstant)
+      .addDisposableTo(disposeBag)
+
+    heightConstant
+      .asObservable()
+      .distinctUntilChanged()
+      .subscribeOn(MainScheduler.instance)
+      .subscribeNext { [weak self] constant in
+        guard let `self` = self else { return }
+        let tabBarHeight = self.tabBarController?.tabBar.frame.height ?? 0
+        self.contentBottomConstraint.constant = max(constant - tabBarHeight, 0)
+      }
+      .addDisposableTo(disposeBag)
+  }
+}
+
+extension MessageViewController: UIScrollViewDelegate {
+  func scrollViewWillBeginDragging(scrollView: UIScrollView) {
     shouldScrollToBottom = false
   }
 }
 
-// MARK: UITableViewDataSource
-extension MessageViewController {
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension MessageViewController: UITableViewDataSource {
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return cellCount
   }
-}
 
-// MARK: UITableViewDelegate
-extension MessageViewController {
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     switch Row(indexPath: indexPath) {
     case .friend:
       let cell: MessageFriendCell = tableView.dequeueReusableCell(indexPath: indexPath)
@@ -76,7 +117,10 @@ extension MessageViewController {
     }
   }
 
-  override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+}
+
+extension MessageViewController: UITableViewDelegate {
+  func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     switch Row(indexPath: indexPath) {
     case .friend:
       return MessageFriendCell.estimatedHeight
